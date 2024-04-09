@@ -1,0 +1,111 @@
+.popup-container {
+    position: absolute;
+    top: 379px;
+    left: 540.5px;
+    width: 432px;
+    height: 224px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+ 
+/* width: Hug (432px)
+height: Hug (224px)
+top: 379px
+left: 540.5px
+padding: 24px, 16px, 24px, 16px
+border-radius: 8px
+border: 1px
+gap: 16px
+ */
+ 
+.popup {
+    width: 432px;
+    height: 224px;
+    padding: 24px 16px;
+    border-radius: 8px;
+    border: 1px solid #000;
+    /* Adjust border color and style as needed */
+    gap: 16px;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+}
+ 
+.popuptext {
+    width: 400px;
+    height: 24px;
+    gap: 12px;
+    padding: 0px, 16px, 0px, 16px;
+    border-radius: 8px;
+    gap: 8px;
+}
+/* width: Hug (400px)
+height: Hug (24px)
+padding: 0px, 16px, 0px, 16px
+border-radius: 8px
+gap: 8px
+ */
+ 
+.input-box {
+    width: 357px;
+    height: 72px;
+    padding: 10px;
+    border-radius: 8px;
+  border: 1px solid var(--Field-Border, rgba(19, 50, 88, 0.5));
+  background: var(--Cards, #fff);
+   
+ 
+}
+ 
+.submit-button {
+    width: 100px;
+    /* Adjust width as needed */
+    height: 40px;
+    /* Adjust height as needed */
+    border: none;
+    border-radius: 4px;
+    background-color: white;
+ 
+    /* Adjust button color as needed */
+    color: #6973e3;
+    cursor: pointer;
+    border-radius: 6px;
+    border: 1px solid var(--Field-Border, rgba(19, 50, 88, 0.50));
+    box-shadow: 2px 2px 4px 0px rgba(27, 79, 145, 0.15);
+    background-color: white;
+}
+ 
+.cancel-button {
+    width: 100px;
+    /* Adjust width as needed */
+    height: 40px;
+    /* Adjust height as needed */
+    border: none;
+    border-radius: 4px;
+    background-color: white;
+    /* Adjust button color as needed */
+    color: #6973e3;
+    cursor: pointer;
+    margin-right: 10px;
+    border-radius: 6px;
+    border: 1px solid var(--Field-Border, rgba(19, 50, 88, 0.50));
+    box-shadow: 2px 2px 4px 0px rgba(27, 79, 145, 0.15);
+    background-color: white;
+}
+ 
+p{
+    padding: 0px, 16px, 0px, 16px;
+border-radius: 8px;
+gap: 8px;
+}
+ 
+.forbuttons{
+   
+ 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+    align-self: stretch;
+}

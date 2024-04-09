@@ -1,0 +1,301 @@
+<app-header></app-header>
+ 
+<head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter%3A400%2C500" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro%3A400%2C500" />
+    <!-- <link rel="stylesheet" href="./styles/to-self-account-3.css"/> -->
+ 
+</head>
+<app-sidenav></app-sidenav>
+<div class="container">
+    <div class="topcontainer">
+        <div class="for1and2">
+            <div class="for1">
+                <div class="leftin1">
+                    <p class="welcome">Welcome</p>
+                    <p class="custName">{{ accountHolder }}</p>
+                </div>
+                <div class="rightin1">
+                    <div class="account-details">
+                        <div class="account-type">
+                            <div class="account-details-type">
+                                <ng-container *ngIf="chooseAcc === 'SAVINGS'">Savings Account</ng-container>
+                                <ng-container *ngIf="chooseAcc === 'CURRENT'">Current Account</ng-container>
+                                <ng-container *ngIf="chooseAcc !== 'SAVINGS' && chooseAcc !== 'CURRENT'">Unknown Account
+                                    Type</ng-container>
+                            </div>
+                            <div class="account-details-account-number">
+                                {{chooseAccNo}}
+                            </div>
+ 
+                        </div>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="2" height="58" viewBox="0 0 2 58" fill="none">
+                            <path d="M1 57L1 1" stroke="#1B4F91" stroke-opacity="0.25" stroke-width="0.4"
+                                stroke-linecap="round" />
+                        </svg>
+ 
+                        <div class="account-type">
+                            <div class="account-details-type">
+                                Available balance
+                            </div>
+ 
+                            <div class="account-balance">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
+                                    fill="none">
+                                    <path
+                                        d="M2.57398 11.702L6.48862 15.6167H4.74471L1.05 11.922V10.3833H3.33333L3.33349 10.3833C3.75601 10.382 4.16777 10.25 4.51222 10.0052C4.85666 9.76052 5.11689 9.41516 5.25716 9.0166L5.2806 8.95H5.21H1.05V7.71667H5.21H5.28089L5.2571 7.64989C4.97437 6.85632 4.22354 6.28333 3.33333 6.28333H1.05V5.05H8.28333V6.28333H5.98267H5.88083L5.94311 6.36391C6.24172 6.75027 6.4491 7.19915 6.54974 7.67697L6.5581 7.71667H6.59867H8.28333V8.95H6.59867H6.55789L6.54969 8.98994C6.39755 9.73096 5.99455 10.3968 5.40864 10.8753C4.82272 11.3538 4.08974 11.6157 3.33327 11.6167H2.60933H2.48862L2.57398 11.702Z"
+                                        fill="#1B4F91" stroke="white" stroke-width="0.1" />
+                                </svg>
+                                <!-- <span class="amount" [attr.dataAfterDecimal]="getDigitsAfterDecimal(balanceAmount)">{{
+                                    balanceAmount }}.</span> -->
+
+<span class="amount"
+[attr.dataAfterDecimal]="getDigitsAfterDecimal(balanceAmount)">{{ formatAmount(balanceAmount) }}.</span>
+                            </div>
+                        </div>
+ 
+                    </div>
+                </div>
+            </div>
+            <div class="for2">
+                <div class="leftin2">
+ 
+                    <div class="account-div">
+ 
+                        <p class="account-title">Switch Account</p>
+                        <div class=".select-wrapper">
+                            <div class="account-select">
+                                <select class="scacc" id="chooseAcc" [(ngModel)]="chooseAcc" (change)="onAccountTypeChange()">
+ 
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
+                                        fill="none" class="custom-arrow-svg">
+                                        <g clip-path="url(#clip0_642_111)">
+                                            <path d="M7.604 12.2667L-0.395996 3.73334H15.604L7.604 12.2667Z"
+                                                fill="black" />
+                                        </g>
+                                        <defs>
+                                            <clipPath id="clip0_642_111">
+                                                <rect width="16" height="16" fill="white" />
+                                            </clipPath>
+                                        </defs>
+                                    </svg>
+                                    <option class="scacc-opp" *ngFor="let option of dropdownOptionschooseAcc"
+                                        [value]="option.value">{{
+                                        option.label }}</option>
+                                </select>
+ 
+                                <select class="accno" id="chooseAccNo" [(ngModel)]="chooseAccNo"
+                                    (change)="onSelectAccountNo($event)">
+                                    <option class="accno-opp"
+                                        *ngFor="let option of dropdownOptionschooseAccNo; let i = index"
+                                        [value]="option.value">
+                                        {{ option.label }}
+                                    </option>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
+                                        fill="none" class="custom-arrow-svg">
+                                        <g clip-path="url(#clip0_642_111)">
+                                            <path d="M7.604 12.2667L-0.395996 3.73334H15.604L7.604 12.2667Z"
+                                                fill="black" />
+                                        </g>
+                                        <defs>
+                                            <clipPath id="clip0_642_111">
+                                                <rect width="16" height="16" fill="white" />
+                                            </clipPath>
+                                        </defs>
+                                    </svg>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="rightin2">
+                    <div class="recent-transactions-container">
+                        <span class="recent-transactions">
+                        </span>
+                        <a class="download-transactions" (click)="generatePDF()">
+                            <!-- Download Statement -->
+                        </a>
+                    </div>
+                    <button class="view-statement" id="view-statement" (click)="transaction()">View Statement</button>
+                </div>
+            </div>
+        </div>
+ 
+    </div>
+ 
+ 
+ 
+    <div class="downcontainer">
+        <div class="pieandexpense">
+            <div class="pie">
+                <div class="timeframe">
+                    <button class="today" [class.active]="selectedTimeframe === 'today'" (click)="todaybudget()">Today</button>
+                    <div class="vertical-line"></div>
+                    <button class="today" [class.active]="selectedTimeframe === 'yesterday'" (click)="yesterdaybudget()">Yesterday</button>
+                    <div class="vertical-line"></div>
+                    <button class="today" [class.active]="selectedTimeframe === 'week'" (click)="weekbudget()">Week</button>
+                    <div class="vertical-line"></div>
+                    <button class="today" [class.active]="selectedTimeframe === 'month'" (click)="monthbudget()">Month</button>
+                    <div class="vertical-line"></div>
+                    <button class="today" [class.active]="selectedTimeframe === 'year'" (click)="yearbudget()">Year</button>
+                  </div>
+                <!-- <h2>Pie Chart</h2> -->
+                <div class="pie-div">
+ 
+                    <canvas id="piechart" class="chart-canvas"></canvas>
+                </div>
+            </div>
+            <div class="expenses">
+                <p class="expenses-title">Your expenses</p>
+                <hr>
+                <div class="budget-cat">
+                    <div class="budget-tags">
+                        <div class="legend-color lcolor">
+                            <!-- <div class="lcolor">
+                            </div> -->
+                        </div>
+                        <div class="name-amount">
+                            <div class="cat-name">
+                                <p class="cat-font">Food</p>
+                            </div>
+                            <div class="cat-amount">
+                                <p class="cat-balance">₹ {{ foodExpense }}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="budget-tags">
+                        <div class="legend-color lcolor2">
+                            <!-- <div class="lcolor2">
+                            </div> -->
+                        </div>
+                        <div class="name-amount">
+                            <div class="cat-name">
+                                <p class="cat-font">Fuel</p>
+                            </div>
+                            <div class="cat-amount">
+                                <p class="cat-balance">₹ {{ fuelExpense }}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="budget-tags">
+                        <div class="legend-color lcolor3">
+                            <!-- <div class="lcolor3">
+                            </div> -->
+                        </div>
+                        <div class="name-amount">
+                            <div class="cat-name">
+                                <p class="cat-font">Travel</p>
+                            </div>
+                            <div class="cat-amount">
+                                <p class="cat-balance">₹ {{ travelExpense }}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="budget-tags">
+                        <div class="legend-color lcolor4">
+                            <!-- <div class="lcolor4">
+                            </div> -->
+                        </div>
+                        <div class="name-amount">
+                            <div class="cat-name">
+                                <p class="cat-font">Bills</p>
+                            </div>
+                            <div class="cat-amount">
+                                <p class="cat-balance">₹ {{ billsExpense }}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="budget-tags">
+                        <div class="legend-color lcolor5">
+                            <!-- <div class="lcolor5">
+                            </div> -->
+                        </div>
+                        <div class="name-amount">
+                            <div class="cat-name">
+                                <p class="cat-font">Entertainment</p>
+                            </div>
+                            <div class="cat-amount">
+                                <p class="cat-balance">₹ {{ entertainmentExpense }}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="budget-tags">
+                        <div class="legend-color lcolor6">
+                            <!-- <div class="lcolor6">
+                            </div> -->
+                        </div>
+                        <div class="name-amount">
+                            <div class="cat-name">
+                                <p class="cat-font">Loan</p>
+                            </div>
+                            <div class="cat-amount">
+                                <p class="cat-balance">₹ {{ loanExpense }}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="budget-tags">
+                        <div class="legend-color lcolor7">
+                            <!-- <div class="lcolor7">
+                            </div> -->
+                        </div>
+                        <div class="name-amount">
+                            <div class="cat-name">
+                                <p class="cat-font">Recharge</p>
+                            </div>
+                            <div class="cat-amount">
+                                <p class="cat-balance">₹ {{ rechargeExpense }}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="budget-tags">
+                        <div class="legend-color lcolor8">
+                            <!-- <div class="lcolor8">
+                            </div> -->
+                        </div>
+                        <div class="name-amount">
+                            <div class="cat-name">
+                                <p class="cat-font">Shopping</p>
+                            </div>
+                            <div class="cat-amount">
+                                <p class="cat-balance">₹ {{ shoppingExpense }}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="budget-tags">
+                        <div class="legend-color lcolor9">
+                            <!-- <div class="lcolor9">
+                            </div> -->
+                        </div>
+                        <div class="name-amount">
+                            <div class="cat-name">
+                                <p class="cat-font">Miscellaneous</p>
+                            </div>
+                            <div class="cat-amount">
+                                <p class="cat-balance">₹ {{ miscellaneousExpense }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+ 
+            </div>
+        </div>
+        <div class="trend">
+            <div class="exp-select">
+               
+                <label class="expenses-title" >Your expense trend for</label>
+                <select class="dropdown" #categorySelect (change)="onOptionSelect(categorySelect.value)">
+                    <option>Select</option>
+                    <option *ngFor="let option of categoryOptions" [value]="option">{{ option }}</option>
+
+                </select>
+ 
+            </div>
+            <div class="line-chart">
+ 
+                <canvas id="linechart"></canvas>
+            </div>
+ 
+            <!-- <h2>Line Chart</h2> -->
+        </div>
+    </div>
+</div>

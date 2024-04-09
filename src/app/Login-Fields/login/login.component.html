@@ -1,0 +1,46 @@
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" href="/favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#000000" />
+  <title>To Self Account 3</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter%3A400%2C500" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro%3A400%2C500" />
+  <!-- <link rel="stylesheet" href="./styles/to-self-account-3.css"/> -->
+
+
+</head>
+
+<div class="background-image">
+ 
+    <br><br><br><br><br>
+    <div class="login-container">
+      <p class="login">Login</p> <br>
+     
+      <label for="userid">UserID<span class="star">*</span><span *ngIf="isUserIdValid" style="color: green;">&#10004;</span> </label>
+      <input type="text" id="userid" [(ngModel)]="userid" (input)="onUserIdInputChange()" maxlength="8" required />
+      <!-- Display error message when userId is less than 8 digits -->
+      <div *ngIf="userid.length < 8 && userid.length > 0" style="color: red;">
+        UserID must be 8 digits.
+      </div>
+      <br>
+      <div *ngIf="UserIDerrorMessage" class="error-message">{{ UserIDerrorMessage }}</div>
+      <br>
+     
+      <label for="password">Password<span class="star">*</span></label> 
+      <input type="password" id="password" [(ngModel)]="password" (input)="onPasswordInputChange()"
+        [disabled]="isLoginDisabled" required (keyup.enter) ="login()" />
+      <br>
+      <div *ngIf="loginerrorMessage" class="error-message">{{ loginerrorMessage }}</div>
+     
+      <div class="forgot-container">
+        <a href="/forgot-userid" (click)="forgotCredentials()">Forgot UserID?</a>
+       
+        <a href="/forgot-password" (click)="forgotCredentials()">Forgot Password?</a>
+      </div>
+      <br><br>
+     
+      <button (click)="login()" [disabled]="isLoginDisabled">Login</button>
+     
+    </div>
+    </div>

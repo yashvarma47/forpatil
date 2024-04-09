@@ -1,0 +1,95 @@
+<app-header></app-header>
+<app-sidenav></app-sidenav>
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <title>To Self Account 3</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter%3A400%2C500" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro%3A400%2C500" />
+ 
+</head>
+ 
+ 
+ 
+<div class="containor">
+    <div class="transfer">
+        <div class="box1">
+            <div class="title">Transfer within My Bank</div>
+            <div class="fields">
+                <label class="label" for="FromAccount">From Account</label>
+          <select class="dropdown" id="selectOptionFrom" [formControl]="transferForm.get('fromAccount')">
+            <option *ngFor="let option of dropdownOptionsFrom" [value]="option.value">{{ option.label }}</option>
+          </select>
+            </div>
+        </div>
+ 
+         <div class="balance-containor">
+       
+        </div>
+        <div class="fields2">
+            <div class="beneficiary-div">
+                <label class="label" for="ToAccount">Beneficiary</label>
+                <a href="add-benficiary">Add New</a>
+            </div>
+            <select class="dropdown" id="selectOptionTo" (change)="onToAccountChange($event)">
+                <option>Select</option>
+                <option *ngFor="let option of dropdownOptionsTo" [value]="option.value">{{ option.label }}</option>
+            </select>
+ 
+        </div>
+ 
+        <!-- <div class="fields7">
+            <label class="label">Beneficiary IFSC</label>
+            <input type="text" placeholder="HDFC000231" id="BeneficiaryIFSC" class="BeneficiaryIFSC-input" readonly />
+        </div> -->
+ 
+        <div class="fields8">
+            <label class="label">Beneficiary Account Number</label>
+            <input type="text" placeholder="6374 8974 8736 21" id="BeneficiaryAccNumb" class="BeneficiaryAccNumb-input"
+                readonly />
+        </div>
+ 
+        <div class="fields3">
+            <label class="label" for="Currency&Amount">Currency & Amount</label>
+            <select class="dropdown1" id="selectOptionCurrency&Amount" [formControl]="transferForm.get('currencyAmount')">
+                <option *ngFor="let option of dropdownOptionsCurrencyAmount" [value]="option.value">{{ option.label }}</option>
+            </select>
+            <input type="number" id="amount-input" class="amount-input" [formControl]="transferForm.get('transferAmount')" (input)="isValidAmount()" required />
+        </div>
+        <div *ngIf="!isValidAmount() && transferForm.get('transferAmount').touched" class="error-message">Invalid amount. Please enter a positive number with up to 2 decimal places and not zero.</div>
+
+ 
+        <div class="fields4">
+            <label class="label" for="TransactionNote">Transaction Note</label>
+            <input type="text" id="TransactionNote" class="TransactionNote-input" [formControl]="transferForm.get('transactionNote')" required />
+        </div>
+ 
+        <div class="fields5">
+            <label class="label" for="AddBudgetTag">Add Budget Tag</label>
+            <select class="dropdown" id="AddBudget" [formControl]="transferForm.get('budgetTag')">
+                <option *ngFor="let option of dropdownOptionsBudget" [value]="option.value">{{ option.label }}
+                </option>
+            </select>
+        </div>
+ 
+        <div class="fields6">
+            <label class="label" for="ScheduleTransfer">Schedule Transfer</label>
+            <input type="date" id="ScheduleTransfer" class="TransactionNote-input" [formControl]="transferForm.get('scheduleTransfer')"/>
+        </div>
+ 
+        <div class="btns">
+            <button class="cancel-btn" (click)="cancelbtn($event)">Cancel</button>
+            <button class="transfer-btn" (click)="transferbtn($event)">Transfer</button>
+          </div>
+    </div>
+ 
+</div>
+
+ 
+ 
+</html>

@@ -1,0 +1,299 @@
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter%3A400%2C500" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro%3A400%2C500" />
+<app-header></app-header>
+<app-sidenav></app-sidenav>
+
+<div class="main-container">
+  <div class="container">
+    <div class="setup">Setup Budget</div>
+
+    <div class="accountdropdown">
+      <label class="accno">Account Number</label>
+      <select
+        class="dropdown"
+        id="ChooseAccNo"
+        formControlName="selectedAccount"
+        (change)="onAccountSelectionChange($event)"
+      >
+        <option
+          *ngFor="let option of dropdownChooseoptions"
+          [value]="option.value"
+        >
+          {{ option.label }}
+        </option>
+      </select>
+    </div>
+
+    <div class="budget">
+      &nbsp; &nbsp; Your Budgets
+      <div class="your-budgets">
+        <div class="box1">
+          &nbsp; &nbsp;Category
+          <div class="fields">
+            <input
+              type="text"
+              [(ngModel)]="categories[0]"
+              readonly
+              class="TransactionNote-input"
+              placeholder="Food"
+            />
+          </div>
+          <div class="fields">
+            <input
+              type="text"
+              [(ngModel)]="categories[1]"
+              readonly
+              class="TransactionNote-input"
+              placeholder="Fuel"
+            />
+          </div>
+          <div class="fields">
+            <input
+              type="text"
+              [(ngModel)]="categories[2]"
+              readonly
+              class="TransactionNote-input"
+              placeholder="Travel"
+            />
+          </div>
+          <div class="fields">
+            <input
+              type="text"
+              [(ngModel)]="categories[3]"
+              readonly
+              class="TransactionNote-input"
+              placeholder="Bills"
+            />
+          </div>
+          <div class="fields">
+            <input
+              type="text"
+              [(ngModel)]="categories[4]"
+              readonly
+              class="TransactionNote-input"
+              placeholder="Entertainment"
+            />
+          </div>
+          <div class="fields">
+            <input
+              type="text"
+              [(ngModel)]="categories[5]"
+              readonly
+              class="TransactionNote-input"
+              placeholder="Loan"
+            />
+          </div>
+          <div class="fields">
+            <input
+              type="text"
+              [(ngModel)]="categories[6]"
+              readonly
+              class="TransactionNote-input"
+              placeholder="Recharge"
+            />
+          </div>
+          <div class="fields">
+            <input
+              type="text"
+              [(ngModel)]="categories[7]"
+              readonly
+              class="TransactionNote-input"
+              placeholder="Shopping"
+            />
+          </div>
+          <div class="fields">
+            <input
+              type="text"
+              [(ngModel)]="categories[8]"
+              readonly
+              class="TransactionNote-input"
+              placeholder="Miscellaneous"
+            />
+          </div>
+
+          <!-- Add other category fields similarly -->
+        </div>
+        <div class="box2">
+          &nbsp; &nbsp;Amount
+          <div class="fields">
+            <input
+              type="text"
+              [(ngModel)]="amounts[0]"
+              [readonly]="!editMode"
+              class="TransactionNote-input"
+              [required]="true"
+              pattern="^\d+(\.\d{1,2})?$"
+              (input)="validateAmount($event)"
+              #amount0="ngModel"
+              [ngClass]="{
+                'invalid-input':
+                  amount0?.invalid && (amount0?.dirty || amount0?.touched)
+              }"
+            />
+          </div>
+          <!-- <div *ngIf="amount0?.invalid && (amount0?.dirty || amount0?.touched)">
+          <div *ngIf="amount0?.errors?.['pattern']" class="error-message">Invalid amount format. Please enter a valid positive number with up to 2 decimal places.</div>
+      </div> -->
+          <div class="fields">
+            <input
+              type="text"
+              [(ngModel)]="amounts[1]"
+              [readonly]="!editMode"
+              class="TransactionNote-input"
+              [required]="true"
+              pattern="^\d+(\.\d{1,2})?$"
+              (input)="validateAmount($event)"
+              #amount0="ngModel"
+              [ngClass]="{
+                'invalid-input':
+                  amount0?.invalid && (amount0?.dirty || amount0?.touched)
+              }"
+            />
+          </div>
+          <!-- <div *ngIf="amount0?.invalid && (amount0?.dirty || amount0?.touched)">
+      <div *ngIf="amount0?.errors?.['pattern']" class="error-message">Invalid amount format. Please enter a valid positive number with up to 2 decimal places.</div>
+  </div> -->
+          <div class="fields">
+            <input
+              type="text"
+              [(ngModel)]="amounts[2]"
+              [readonly]="!editMode"
+              class="TransactionNote-input"
+              [required]="true"
+              pattern="^\d+(\.\d{1,2})?$"
+              (input)="validateAmount($event)"
+              #amount0="ngModel"
+              [ngClass]="{
+                'invalid-input':
+                  amount0?.invalid && (amount0?.dirty || amount0?.touched)
+              }"
+            />
+          </div>
+          <!-- <div *ngIf="amount0?.invalid && (amount0?.dirty || amount0?.touched)">
+  <div *ngIf="amount0?.errors?.['pattern']" class="error-message">Invalid amount format. Please enter a valid positive number with up to 2 decimal places.</div>
+</div> -->
+          <div class="fields">
+            <input
+              type="text"
+              [(ngModel)]="amounts[3]"
+              [readonly]="!editMode"
+              class="TransactionNote-input"
+              [required]="true"
+              pattern="^\d+(\.\d{1,2})?$"
+              (input)="validateAmount($event)"
+              #amount0="ngModel"
+              [ngClass]="{
+                'invalid-input':
+                  amount0?.invalid && (amount0?.dirty || amount0?.touched)
+              }"
+            />
+          </div>
+          <!-- <div *ngIf="amount0?.invalid && (amount0?.dirty || amount0?.touched)">
+<div *ngIf="amount0?.errors?.['pattern']" class="error-message">Invalid amount format. Please enter a valid positive number with up to 2 decimal places.</div>
+</div> -->
+          <div class="fields">
+            <input
+              type="text"
+              [(ngModel)]="amounts[4]"
+              [readonly]="!editMode"
+              class="TransactionNote-input"
+              [required]="true"
+              pattern="^\d+(\.\d{1,2})?$"
+              (input)="validateAmount($event)"
+              #amount0="ngModel"
+              [ngClass]="{
+                'invalid-input':
+                  amount0?.invalid && (amount0?.dirty || amount0?.touched)
+              }"
+            />
+          </div>
+          <!-- <div *ngIf="amount0?.invalid && (amount0?.dirty || amount0?.touched)">
+<div *ngIf="amount0?.errors?.['pattern']" class="error-message">Invalid amount format. Please enter a valid positive number with up to 2 decimal places.</div>
+</div> -->
+          <div class="fields">
+            <input
+              type="text"
+              [(ngModel)]="amounts[5]"
+              [readonly]="!editMode"
+              class="TransactionNote-input"
+              [required]="true"
+              pattern="^\d+(\.\d{1,2})?$"
+              (input)="validateAmount($event)"
+              #amount0="ngModel"
+              [ngClass]="{
+                'invalid-input':
+                  amount0?.invalid && (amount0?.dirty || amount0?.touched)
+              }"
+            />
+          </div>
+          <!-- <div *ngIf="amount0?.invalid && (amount0?.dirty || amount0?.touched)">
+<div *ngIf="amount0?.errors?.['pattern']" class="error-message">Invalid amount format. Please enter a valid positive number with up to 2 decimal places.</div>
+</div> -->
+          <div class="fields">
+            <input
+              type="text"
+              [(ngModel)]="amounts[6]"
+              [readonly]="!editMode"
+              class="TransactionNote-input"
+              [required]="true"
+              pattern="^\d+(\.\d{1,2})?$"
+              (input)="validateAmount($event)"
+              #amount0="ngModel"
+              [ngClass]="{
+                'invalid-input':
+                  amount0?.invalid && (amount0?.dirty || amount0?.touched)
+              }"
+            />
+          </div>
+          <!-- <div *ngIf="amount0?.invalid && (amount0?.dirty || amount0?.touched)">
+<div *ngIf="amount0?.errors?.['pattern']" class="error-message">Invalid amount format. Please enter a valid positive number with up to 2 decimal places.</div>
+</div> -->
+          <div class="fields">
+            <input
+              type="text"
+              [(ngModel)]="amounts[7]"
+              [readonly]="!editMode"
+              class="TransactionNote-input"
+              [required]="true"
+              pattern="^\d+(\.\d{1,2})?$"
+              (input)="validateAmount($event)"
+              #amount0="ngModel"
+              [ngClass]="{
+                'invalid-input':
+                  amount0?.invalid && (amount0?.dirty || amount0?.touched)
+              }"
+            />
+          </div>
+          <!-- <div *ngIf="amount0?.invalid && (amount0?.dirty || amount0?.touched)">
+<div *ngIf="amount0?.errors?.['pattern']" class="error-message">Invalid amount format. Please enter a valid positive number with up to 2 decimal places.</div>
+</div> -->
+          <div class="fields">
+            <input
+              type="text"
+              [(ngModel)]="amounts[8]"
+              [readonly]="!editMode"
+              class="TransactionNote-input"
+              [required]="true"
+              pattern="^\d+(\.\d{1,2})?$"
+              (input)="validateAmount($event)"
+              #amount0="ngModel"
+              [ngClass]="{
+                'invalid-input':
+                  amount0?.invalid && (amount0?.dirty || amount0?.touched)
+              }"
+            />
+          </div>
+          <!-- <div *ngIf="amount0?.invalid && (amount0?.dirty || amount0?.touched)">
+<div *ngIf="amount0?.errors?.['pattern']" class="error-message">Invalid amount format. Please enter a valid positive number with up to 2 decimal places.</div>
+</div> -->
+        </div>
+        <!-- Add other boxes similarly for other rows -->
+      </div>
+      <div class="img-buttons">
+        <button class="edit-button" (click)="toggleEditMode()">
+          {{ editMode ? "Submit" : "Set Budget" }}
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

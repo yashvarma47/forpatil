@@ -1,0 +1,101 @@
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter%3A400%2C500" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro%3A400%2C500" />
+<app-header></app-header>
+<app-sidenav></app-sidenav>
+<div class="container">
+    <div class="addbeneficiary">
+        <!-- (ngSubmit)="onSubmit(beneficiaryForm)" -->
+        <form #beneficiaryForm="ngForm" class="addbeneficiary"  novalidate>
+            <div class="box1">
+                <div class="title">Add Beneficiary</div>
+            </div>
+            <div class="maincontent">
+                <div class="fields">
+                    <label for="beneficiaryAccountNumber" class="forlabels">Beneficiary Account Number<span class="star">*</span></label>
+                    <input [(ngModel)]="beneficiaryAccountNumber" name="beneficiaryAccountNumber"
+                        id="beneficiaryAccountNumber" class="forinputs" type="number" placeholder="Enter Account Number"
+                        required (input)="limitTo11Digits($event)">
+                </div>
+ 
+                <div class="fields">
+                    <label for="reenteredAccountNumber" class="forlabels">Re-enter Beneficiary Account Number<span class="star">*</span></label>
+                    <input [(ngModel)]="reenteredAccountNumber" name="reenteredAccountNumber"
+                        id="reenteredAccountNumber" class="forinputs" type="number" placeholder="Enter Account Number"
+                        required (input)="limitTo11Digits($event)">
+                </div>
+                <div class="fields">
+                    <label for="name" class="forlabels">Name</label>
+                    <input [(ngModel)]="name" id="name" name="name" class="forinputs" type="text">
+                </div>
+                <div class="fields">
+                    <label for="email" class="forlabels">E-mail Id</label>
+                    <input [(ngModel)]="email" name="email" id="email" class="forinputs" type="text">
+                  </div>
+            </div>
+            <div class="forbuttons">
+                <button class="cancel" (click)="onCancel()">Cancel</button>
+                <!-- <button class="addbutton" ">Add</button> -->
+                <button class="addbutton" (click)="onSubmit(beneficiaryForm)" type="submit" [disabled]="beneficiaryForm.invalid">Add</button>
+            </div>
+        </form>
+ 
+    </div>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+    <!-- <div class="container">
+    <div class="addbeneficary">
+        <div class="box1">
+            <div class="title">Add Beneficary</div>
+        </div>
+        <div class="maincontent">
+            <div class="fields">
+                <label for="" class="forlabels">Beneficiary Account Number*</label>
+                <input class="forinputs" type="text" placeholder="5674 8974 8736 21">
+            </div>
+            <div class="fields">
+                <label for="" class="forlabels">Re-enter Beneficiary Account Number*</label>
+                <input class="forinputs" type="text" placeholder="5674 8974 8736 21">
+            </div>
+            <div class="fields">
+                <label for="" class="forlabels">Name</label>
+                <input class="forinputs" type="text" >
+            </div>
+            <div class="fields">
+                <label for="" class="forlabels">E-mail Id</label>
+                <input class="forinputs" type="text" >
+            </div>
+           
+        </div>
+        <div class="forbuttons">
+            <button class="cancel">Cancel</button>
+            <button class="addbutton" (click)="onSubmit()">Add</button>
+        </div>
+       
+    </div>
+</div> -->

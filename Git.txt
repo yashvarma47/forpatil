@@ -1,0 +1,61 @@
+1. Create a GIT SSH key and associate it with GitLab:
+
+# Generate SSH key
+ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+
+# Follow the prompts and leave the passphrase empty for simplicity
+
+# Add SSH key to the SSH agent
+eval "$(ssh-agent -s)"
+ssh-add ~/.ssh/id_rsa
+
+# Copy the SSH key to the clipboard
+cat ~/.ssh/id_rsa.pub
+# Add the copied key to GitLab:
+# Go to your GitLab account -> Settings -> SSH Keys -> Add SSH Key
+
+# Test the SSH connection
+ssh -T git@gitlab.com
+
+
+2. Clone retail banking project onto the system with the SSH key:
+
+git clone git@gitlab.com:your_username/retail-banking.git
+cd retail-banking
+
+3. Create a develop and a master branch and protect it:
+
+# Create develop branch
+git checkout -b develop
+git push -u origin develop
+
+# Create master branch
+git checkout -b master
+git push -u origin master
+
+# Protect branches on GitLab (you might need to do this through the GitLab UI):
+# Go to your project -> Settings -> Repository -> Protected branches
+# Protect both master and develop branches
+
+# Optional: Set master as the default branch
+# Go to your project -> Settings -> General -> Default branch
+
+4. Create a sample feature branch from the develop branch and create a PR to merge it to the develop branch:
+# Switch to develop branch
+git checkout develop
+
+# Create a feature branch
+git checkout -b feature/my-feature
+
+# Make changes, commit, and push the feature branch
+git add .
+git commit -m "Implementing my feature"
+git push -u origin feature/my-feature
+
+# Create a pull request on GitLab:
+# Go to your project -> Merge Requests -> New merge request
+# Source branch: feature/my-feature
+# Target branch: develop
+
+# Complete the pull request details and submit it
+

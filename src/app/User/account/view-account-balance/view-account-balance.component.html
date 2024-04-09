@@ -1,0 +1,41 @@
+<!-- <p>view-account-balance works!</p> -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter%3A400%2C500" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro%3A400%2C500" />
+<app-header></app-header>
+<app-sidenav></app-sidenav>
+<div class="container">
+    <div class="viewbalance">
+        <div class="box1">
+            <div class="title">View Account Balance</div>
+        </div>
+        <div class="dropdowns">
+            <div class="selecttype">
+                <label for="accountType" class="accounttypelabel">Select Account Type</label>
+                <select title="Select account type" id="accountType" class="accounttypedropdown" [(ngModel)]="chooseAcc" (change)="onAccountTypeChange()" >
+                    <option class="SavingText" *ngFor="let option of dropdownOptionschooseAcc; let i = index" [value]="option.value">{{
+                        option.label }}</option>
+                </select>
+            </div>
+
+            <div class="selectacc">
+                <label for="accountType" class="accounttypelabel">Select Account</label>
+                <select id="account" class="accounttypedropdown" [(ngModel)]="chooseAccNo" (change)="onSelectAccountNo($event)">
+                    <option class="scacc-opp" *ngFor="let option of dropdownOptionschooseAccNo; let i = index " [value]="option.value">{{
+                        option.label }}</option>   
+                </select>
+                
+            </div>
+        </div>
+        <div class="viewaurdisplay">
+            <button class="viewbutton" (click)="onViewClick()">View</button>
+ 
+            <div class="balance-containor" *ngIf="showBalance">
+               
+                <p class="totalbalance" id="displayamount">
+                  <span class="amount" id="wholeamount">{{ customerDetails.accountBalance | currency: 'INR': 'symbol' }}</span>
+                  <!-- <span class="decimal" id="decimalamount">00</span> -->
+                </p>
+              </div>
+        </div>
+    </div>
+</div>

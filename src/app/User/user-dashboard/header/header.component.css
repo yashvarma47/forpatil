@@ -1,0 +1,37 @@
+.header {
+  display: flex;
+  width: 1512px;
+  height: 64px;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  background: #1b4f91;
+}
+.logo {
+  width: 124.444px;
+  height: 56px;
+  flex-shrink: 0;
+}
+.logout-div {
+  display: flex;
+  padding: 10px 0px 10px 10px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.logout {
+  color: #fff;
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  text-decoration: none;
+}
+.mavericlogo {
+  display: flex;
+  width: 1320px;
+  padding: 8px 0px;
+  justify-content: space-between;
+  align-items: center;
+}

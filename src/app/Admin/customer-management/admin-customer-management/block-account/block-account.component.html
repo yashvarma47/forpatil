@@ -1,0 +1,34 @@
+<app-header></app-header>
+<app-admin-sidenav></app-admin-sidenav>
+<head>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter%3A400%2C500" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro%3A400%2C500" />
+</head>
+<div class="container" [formGroup]="OpenBlockForm">
+    <div class="transfer">
+      <div class="box1">
+        <div class="title">Block Account</div>
+ 
+        <div class="fields4">
+          <label class="label" for="AccNo" class="div-2">Account Number<span class="star">*</span></label>
+          <input type="number" id="AccNo" class="TransactionNote-input" maxlength="12" formControlName="accountNumber" (input)="limitTo11Digits($event)" />
+        </div>
+      </div>
+      <div class="fields4">
+        <label class="label" for="ChooseBlock" class="div-2">Block Type<span class="star">*</span></label>
+        <select class="dropdown" id="ChooseBlock" formControlName="blockType">
+          <option *ngFor="let option of dropdownChooseBlock" [value]="option.value">{{ option.label }}</option>
+        </select>
+      </div>
+ 
+      <div class="fields4">
+        <label class="label" for="reason" class="div-2">Reason<span class="star">*</span></label>
+        <input type="text" id="reason" class="Reason-input" formControlName="reason" />
+      </div>
+ 
+      <div class="btns">
+        <button class="submit-btn" (click)="submitbtn($event)">Block Account</button>
+      </div>
+    </div>
+  </div>
+ 

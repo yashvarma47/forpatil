@@ -1,0 +1,66 @@
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter%3A400%2C500" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro%3A400%2C500" />
+<app-header></app-header>
+<app-sidenav></app-sidenav>
+<div class="container">
+    <div class="setupprofile">
+        <!-- <span class="editbutton"></span> -->
+        <div class="box-1">
+            <div class="title">Profile</div>
+        </div>
+        <div class="allinputfields">
+            <!-- <div class="fields">
+                <label class="label" for="Name">Name*</label>
+                <input type="text" id="Name" class="Name-input" readonly />
+            </div> -->
+            <div class="fields">
+                <label class="label" for="Name">Name</label>
+                <input type="text" id="Name" class="Name-input" readonly [(ngModel)]="customerData.firstName" />
+            </div>
+            <div class="fields">
+                <label class="label" for="Mobile">Mobile</label>
+                <!-- <input type="text" id="Mobile" class="Name-input" [readonly]="!isEditMode" [(ngModel)]="customerData.phoneNumber" (input)="limitTo10Digits($event)"/> -->
+                <input type="text" id="Mobile" class="Name-input" [readonly]="!isEditMode" [(ngModel)]="customerData.phoneNumber" (input)="limitTo10Digits($event)"/>
+            </div>
+            <div *ngIf="onEditClick.length < 11 && onEditClick.length > 0" style="color: red;">
+                Account Number must be 11 digits.
+              </div>
+              <div class="fields">
+                <label class="label" for="Email">E-mail Id</label>
+                <input type="text" id="Email" class="Name-input" [readonly]="!isEditMode" [(ngModel)]="customerData.email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" title="Enter a valid email address"/>
+            </div>
+            <div class="fields">
+                <label class="label" for="Street">Street name</label>
+                <input type="text" id="Street" class="Name-input" [readonly]="!isEditMode" [(ngModel)]="customerData.address.street"/>
+            </div>
+            <div class="fields">
+                <label class="label" for="City">City</label>
+                <input type="text" id="City" class="Name-input" [readonly]="!isEditMode" [(ngModel)]="customerData.address.city"/>
+            </div>
+            <div class="fields">
+                <label class="label" for="State">State</label>
+                <input type="text" id="State" class="Name-input" [readonly]="!isEditMode" [(ngModel)]="customerData.address.state"/>
+            </div>
+           
+            <div class="fields">
+                <label class="label" for="Pincode">Pincode</label>
+                <input type="number" id="Pincode" class="Name-input" [readonly]="!isEditMode" [(ngModel)]="customerData.address.zipcode"/>
+            </div>
+            <div class="forbuttons">
+                <button class="cancel" (click)="onCancelClick()">Cancel</button>
+                <button class="updatebutton" (click)="onUpdateClick()">Update</button>
+            </div>
+        </div>
+        <div class="setup-profile2">
+            <button class="edit-button" (click)="onEditClick()" [style.background-color]="isEditMode ? 'lightgray' : 'transparent'"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 40 40" fill="none" [class.clicked]="isEditMode">
+                <circle cx="20" cy="20" r="20" fill="#1B4F91" fill-opacity="0.1"/>
+               
+              </svg>
+           
+              <img class="penpaper" src="assets/PenPaper.png" alt="">
+            </button>
+ 
+        </div>
+   
+    </div>  
+</div>

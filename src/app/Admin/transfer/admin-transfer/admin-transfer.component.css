@@ -1,0 +1,200 @@
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.container {
+    margin: -853px 96px 32px 386px !important;
+    width: 1040px;
+    height: 854px;
+    /* transform: rotate(90deg); */
+    flex-shrink: 0;
+    border-radius: 8px;
+    border: 1px solid var(--Border, rgba(27, 79, 145, 0.25));
+    background: var(--Cards, #fff);
+    box-shadow: 0px 4px 16px 0px rgba(27, 79, 145, 0.15);
+    z-index: 1;
+}
+ 
+.title{
+    color: var(--Primary, #1B4F91);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+.error-message {
+    color: red;
+    margin-left: 200px;
+}
+.view-balance {
+    /* background-color: aqua; */
+    display: flex;
+    flex-direction: column;
+    /* justify-content: flex-end; */
+    align-items: flex-start;
+    gap: 40px;
+    margin-top: 56px;
+    margin-bottom: 536px;
+    margin-right: 542px;
+    margin-left: 56px;
+    border-radius: 8px;
+    height: 586px;
+    width: 448px;
+    /* transform: rotate(270deg); */
+    /* flex-shrink: 0; */
+ 
+    /* border: 1px solid var(--Border, rgba(27, 79, 145, 0.25));
+    background: var(--Cards, #fff);
+    box-shadow: 0px 4px 16px 0px rgba(27, 79, 145, 0.15); */
+    z-index: 2;
+}
+.box1 {
+    display: flex;
+    width: 448px;
+    height: 40px;
+    padding: 8px 8px 8px 12px;
+    align-items: center;
+    gap: 8px;
+    border-radius: 8px;
+    background: var(--Table-Card-Header, rgba(27, 79, 145, 0.10));
+}
+ 
+.fields {
+    width: 448px;
+    height: 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-self: stretch;
+}
+ 
+.radiofields{
+    width: 448px;
+    height: 32px;
+    display: flex;
+    /* justify-content: space-between; */
+    align-items: center;
+    align-self: stretch;
+}
+/* .creditradio{
+    margin-right: 50px;
+} */
+.forradio{
+    display: flex;
+    width: 245px;
+    height: 32px;
+    padding: 10px;
+    align-items: center;
+    /* border-radius: 8px;
+    border: 1px solid var(--Field-Border, rgba(19, 50, 88, 0.50));
+    background: var(--Cards, #FFF); */
+    margin-left: 80px;
+    gap: 20px
+}
+.forbuttons {
+    /* margin-top: 80px; */
+    width: 448px;
+    height: 40px;
+ 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+    align-self: stretch;
+    /* display: flex;
+justify-content: center;
+align-items: center;
+gap: 24px;
+align-self: stretch; */
+}
+ 
+.forlabels {
+    color: rgba(11, 35, 66, 0.60);
+    /* font-family: Inter; */
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+ 
+.forinputs {
+    display: flex;
+    width: 245px;
+    height: 32px;
+    padding: 10px;
+    align-items: center;
+    border-radius: 8px;
+    border: 1px solid var(--Field-Border, rgba(19, 50, 88, 0.50));
+    background: var(--Cards, #FFF);
+ 
+}
+ 
+.maincontent {
+    display: flex;
+    width: 448px;
+   
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+    margin-top: 30px;
+   
+}
+ 
+.forradiobuttons{
+    display: inline-block;
+    width: 448px;
+    height: 32px;
+    align-items: center;
+    align-self: stretch;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    /* gap: 30px; */
+    /* gap: 24px; */
+    /*   width: 448px;
+    height: 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-self: stretch; */
+ 
+}
+ 
+.reasoninput {
+    display: flex;
+    width: 245px;
+    height: 95px;
+    padding: 10px;
+    align-items: center;
+    border-radius: 8px;
+    border: 1px solid var(--Field-Border, rgba(19, 50, 88, 0.5));
+    background: var(--Cards, #fff);
+}
+ 
+.fornarrative{
+    display: flex;
+    width: 448px;
+    height: 95px;
+    justify-content: space-between;
+    align-items: center;
+    align-self: stretch;
+}
+ 
+.submitbutton{
+    width: 269.5px;
+    height: 40px;
+    padding: 8px 30px;
+    justify-content: center;
+    align-items: center;
+   
+    border-radius: 6px;
+    background: var(--Primary-action-Button-Enabled, #1B4F91);
+    box-shadow: 2px 4px 4px 0px rgba(27, 79, 145, 0.15);
+    color:white
+ 
+}
+.star {
+    color: red;
+    margin-left: 5px;
+}

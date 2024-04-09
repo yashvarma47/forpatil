@@ -1,0 +1,103 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter%3A400%2C500" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro%3A400%2C500" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./manage-notifications.component.css">
+</head>
+<app-header></app-header>
+<app-sidenav></app-sidenav>
+<div class="container">
+    <div class="managecontainer">
+        <div class="box1">
+            <div class="title">Manage Notifications</div>
+        </div>
+        <div class="maincontent">
+            <div class="fortext">
+                <p id="choosewhere">Choose where you want to get the alerts</p>
+                <div class="mobileandemail">
+                    <div>Mobile</div>
+                    <div>E-mail</div>
+                </div>
+            </div>
+            <div class="frame311">
+                <div class="forfields">
+                    <label for="Transaction Confirmation">Transaction Confirmation</label>
+                    <div class="forcheckboxes">
+                        <div class="forinput"><input class="chk" type="checkbox" name="" id="" disabled></div>
+                        <div class="forinput"><input class="chk" type="checkbox" name="Transaction_Confirmation"
+                                value="Transaction_Confirmation" id="Transaction_Confirmation"
+                                [(ngModel)]="transactionConfirmationChecked" (change)="onCheckClick('Transaction_Confirmation')"></div>
+                    </div>
+                </div>
+                <div class="forfields">
+                    <label for="Account Balance Updates">Account Balance Updates</label>
+                    <div class="forcheckboxes">
+                        <div class="forinput"><input class="chk" type="checkbox" name="" id="" disabled></div>
+                        <div class="forinput"><input class="chk" type="checkbox" name="" value="Account_Balance_Updates"
+                                id="Account_Balance_Updates" [(ngModel)]="accountBalanceUpdatesChecked" (change)="onCheckClick('Account_Balance_Updates')"></div>
+                    </div>
+                </div>
+                <div class="forfields">
+                    <label for="Low balance alert">Low balance alert</label>
+                    <div class="forcheckboxes">
+                        <div class="forinput"><input class="chk" type="checkbox" name="" id="" disabled></div>
+                        <div class="forinput"><input class="chk" type="checkbox" name="" value="Low_balance_alert"
+                                id="Low_balance_alert" [(ngModel)]="lowBalanceAlertChecked" (change)="onCheckClick('Low_balance_alert')"></div>
+                    </div>
+                </div>
+                <div class="forfields">
+                    <label for="Security Alerts">Security Alerts</label>
+                    <div class="forcheckboxes">
+                        <div class="forinput"><input class="chk" type="checkbox" name="" id="" disabled></div>
+                        <div class="forinput"><input class="chk" type="checkbox" name="" value="Security_Alerts"
+                                id="Security_Alerts" [(ngModel)]="securityAlertsChecked" (change)="onCheckClick('Security_Alerts')"></div>
+                    </div>
+                </div>
+                <div class="forfields">
+                    <label for="Account block alerts">Account block alerts</label>
+                    <div class="forcheckboxes">
+                        <div class="forinput"><input class="chk" type="checkbox" name="" id="" disabled></div>
+                        <div class="forinput"><input class="chk" type="checkbox" name="" value="Account_block_alerts"
+                                id="Account_block_alerts" [(ngModel)]="accountBlockAlertsChecked" (change)="onCheckClick('Account_block_alerts')"></div>
+                    </div>
+                </div>
+ 
+            </div>
+        </div>
+    </div>
+</div>
+ 
+<!-- <div class="choose">Choose where you want to get the alerts</div>
+            <div class="selectnot">
+                <div class="fields">
+                    <label for="beneficiaryAccountNumber" class="forlabels">Transaction Confirmation</label>
+                    <div class="emailaurmobile">
+                        <input type="checkbox" class="forcheckbox" name="" id="">
+                        <input type="checkbox" class="forcheckbox" name="" id="">
+                    </div>
+                </div>
+                <div class="fields">
+                    <label for="beneficiaryAccountNumber" class="forlabels">Transaction Confirmation</label>
+                    <div class="emailaurmobile">
+                        <input type="checkbox" class="forcheckbox" name="" id="">
+                        <input type="checkbox" class="forcheckbox" name="" id="">
+                    </div>
+                </div>
+                <div class="fields">
+                    <label for="beneficiaryAccountNumber" class="forlabels">Transaction Confirmation</label>
+                    <div class="emailaurmobile">
+                        <input type="checkbox" class="forcheckbox" name="" id="">
+                        <input type="checkbox" class="forcheckbox" name="" id="">
+                    </div>
+                </div>
+                <div class="fields">
+                    <label for="beneficiaryAccountNumber" class="forlabels">Transaction Confirmation</label>
+                    <div class="emailaurmobile">
+                        <input type="checkbox" class="forcheckbox" name="" id="">
+                        <input type="checkbox" class="forcheckbox" name="" id="">
+                    </div>
+                </div>
+           
+            </div> -->

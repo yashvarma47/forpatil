@@ -1,0 +1,276 @@
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.frame-340 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-self: stretch;
+  margin-top: -853px;
+  margin-left: 359px;
+}
+
+.customer-btn {
+  color: var(--Cards, #000000);
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+
+  display: flex;
+  height: 40px;
+  padding: 10px 16px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+
+  border-radius: 8px 0px 0px 8px;
+  border: 1px solid var(--Border, rgba(27, 79, 145, 0.25));
+}
+
+.accounts-btn {
+  color: var(--Text, #000);
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+
+  display: flex;
+  width: 116px;
+  height: 40px;
+  padding: 10px 16px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+
+  border-radius: 0px 8px 8px 0px;
+  border: 1px solid var(--Border, rgba(27, 79, 145, 0.25));
+  background: var(--Cards, #fff);
+
+  margin-left: -73px;
+}
+
+.customer-btn.active {
+  background: var(--Cards, #1b4f91);
+  color: #fff;
+}
+
+.accounts-btn.active {
+  background: var(--Primary, #1b4f91);
+  color: #fff;
+}
+
+.customer-search {
+  display: flex;
+  width: 296px;
+  padding: 10px 14px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+
+  border-radius: 8px;
+  border: 1px solid var(--Border, rgba(8, 31, 59, 0.25));
+  background: var(--Cards, #fff);
+  box-shadow: 0px 2px 12px 0px rgba(27, 79, 145, 0.1);
+  margin-left: 190px;
+}
+
+.account-search {
+  display: flex;
+  width: 296px;
+  padding: 10px 14px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+
+  border-radius: 8px;
+  border: 1px solid var(--Border, rgba(8, 31, 59, 0.25));
+  background: var(--Cards, #fff);
+  box-shadow: 0px 2px 12px 0px rgba(27, 79, 145, 0.1);
+  margin-left: 190px;
+}
+.error-message {
+  color: red;
+  font-size: 12px;
+  margin-top: 3px;
+  margin-left: 857px;
+}
+
+/* Style the placeholder text */
+#search::placeholder {
+  color: var(--Text-Placeholder, #7a7a7a);
+  font-family: Inter;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.create-customer-btn {
+  color: var(--Primary, #1b4f91);
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+
+  display: flex;
+  width: 148px;
+  height: 40px;
+  padding: 8px 10px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+
+  border-radius: 4px;
+  border: 1px solid var(--Primary, #1b4f91);
+  margin-right: 110px;
+}
+
+.createaccount-btn {
+  color: var(--Primary, #1b4f91);
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+
+  display: flex;
+  width: 148px;
+  height: 40px;
+  padding: 8px 10px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+
+  border-radius: 4px;
+  border: 1px solid var(--Primary, #1b4f91);
+  margin-right: 500px;
+}
+
+/* Customer container */
+.Customer {
+  margin: 26px 96px 32px 274px !important;
+  max-height: 728px; /* Set a max height to enable scrolling */
+  overflow-y: auto; /* Enable vertical scrollbar if content overflows */
+  width: 1015px;
+  border-radius: 8px;
+  border: 1px solid var(--Border, rgba(27, 79, 145, 0.25));
+  background: var(--Cards, #fff);
+  box-shadow: 0px 4px 16px 0px rgba(27, 79, 145, 0.15);
+  z-index: 1;
+}
+
+.customer-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  justify-content: center;
+}
+
+.customer-table th,
+.customer-table td {
+  padding: 12px;
+  text-align: center;
+  /* border-bottom: 1px solid #ddd; */
+
+  color: var(--Text, #000);
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.customer-table th {
+  background: var(--Table-Card-Header, rgba(27, 79, 145, 0.1));
+}
+
+.view-account a,
+.view-details a {
+  text-decoration: none;
+  color: #007bff;
+  cursor: pointer;
+}
+
+.view-account a:hover,
+.view-details a:hover {
+  text-decoration: underline;
+}
+
+/* Account container */
+.Account {
+  margin: -36px 94px 32px 274px !important;
+  width: 1015px;
+  height: 728px;
+  /* transform: rotate(90deg); */
+  flex-shrink: 0;
+  overflow-y: auto;
+  border-radius: 8px;
+  border: 1px solid var(--Border, rgba(27, 79, 145, 0.25));
+  background: var(--Cards, #fff);
+  box-shadow: 0px 4px 16px 0px rgba(27, 79, 145, 0.15);
+  z-index: 1;
+}
+
+/* Account table data */
+.account-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  justify-content: center;
+}
+
+.account-table th,
+.account-table td {
+  padding: 12px;
+  text-align: center;
+  /* border-bottom: 1px solid #ddd; */
+  color: var(--Text, #000);
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.account-table th {
+  background: var(--Table-Card-Header, rgba(27, 79, 145, 0.1));
+}
+
+.account-balance {
+  color: var(--Primary, #1b4f91);
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.make-payment a {
+  text-decoration: none;
+  color: #007bff;
+  cursor: pointer;
+}
+
+.make-payment a:hover {
+  text-decoration: underline;
+}
+/* Add these styles to your existing CSS file */
+.active {
+  color: green;
+}
+
+.blocked {
+  color: red;
+}
+
+.credit-blocked,
+.debit-blocked {
+  color: orange;
+}

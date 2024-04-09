@@ -1,0 +1,201 @@
+.container {
+    margin: -852px 96px 32px 376px !important;
+    width: 1040px;
+    height: 854px;
+    /* transform: rotate(90deg); */
+    flex-shrink: 0;
+    border-radius: 8px;
+    border: 1px solid var(--Border, rgba(27, 79, 145, 0.25));
+    background: var(--Cards, #fff);
+    box-shadow: 0px 4px 16px 0px rgba(27, 79, 145, 0.15);
+    z-index: 1;
+}
+ 
+.viewbalance {
+    /* background-color: aqua; */
+    display: flex;
+    flex-direction: column;
+    /* justify-content: flex-end; */
+    align-items: flex-start;
+    gap: 40px;
+    margin-top: 56px;
+    margin-bottom: 536px;
+    margin-right: 542px;
+    margin-left: 56px;
+    border-radius: 8px;
+    height: 256px;
+    width: 448px;
+    /* transform: rotate(270deg); */
+    /* flex-shrink: 0; */
+ 
+    /* border: 1px solid var(--Border, rgba(27, 79, 145, 0.25));
+    background: var(--Cards, #fff);
+    box-shadow: 0px 4px 16px 0px rgba(27, 79, 145, 0.15); */
+    z-index: 2;
+}
+ 
+/* .box1 {
+    display: flex;
+    width: 448px;
+    height: 40px;
+    padding: 8px 8px 8px 12px;
+    align-items: center;
+    gap: 8px;
+    border-radius: 8px;
+    background: var(--Table-Card-Header, rgba(27, 79, 145, 0.10));
+} */
+ 
+.box1 {
+    display: flex;
+    width: 448px;
+    height: 40px;
+    padding: 8px 8px 8px 12px;
+    align-items: center;
+    gap: 8px;
+    border-radius: 8px;
+    background: var(--Table-Card-Header, rgba(27, 79, 145, 0.10));
+}
+ 
+.title {
+    color: var(--Primary, #1B4F91);
+    /* font-family: Inter; */
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+ 
+.selecttype {
+    display: flex;
+    width: 448px;
+    height: 32px;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+}
+ 
+.accounttypelabel {
+    color: rgba(11, 35, 66, 0.60);
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+ 
+.accounttypedropdown {
+    display: flex;
+    width: 216px;
+    height: 32px;
+    padding: 5px;
+    justify-content: space-between;
+    align-items: center;
+    flex-shrink: 0;
+    border-radius: 8px;
+    border: 1px solid var(--Field-Border, rgba(19, 50, 88, 0.50));
+    background: var(--Cards, #FFF);
+}
+ 
+ 
+/* .SavingText {
+    color: var(--Text, #000);
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+} */
+ 
+.dropdowndivider {
+    width: 448px;
+    height: 0px;
+    stroke-width: 0.4px;
+    stroke: #E0E0E0;
+}
+ 
+.selectacc {
+    display: flex;
+    width: 448px;
+    height: 32px;
+    justify-content: space-between;
+    align-items: center;
+}
+ 
+.dropdowns {
+ 
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+ 
+ 
+}
+option{
+   
+color: var(--Text, #000);
+ 
+font-size: 14px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+}
+ 
+select{
+    color: var(--Text, #000);
+ 
+font-size: 14px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+}
+ 
+.viewbutton{
+    display: flex;
+width: 112px;
+height: 40px;
+padding: 8px 30px;
+justify-content: center;
+align-items: center;
+gap: 10px;
+border-radius: 6px;
+background: var(--Primary-action-Button-Disabled, #1B4F91);
+box-shadow: 2px 4px 4px 0px rgba(27, 79, 145, 0.15);
+color: white; /* Set the text color to white */
+}
+.viewaurdisplay{
+    display: flex;
+width: 448px;
+justify-content: space-between;
+align-items: flex-end;
+}
+.amount {
+    color: var(--Primary, #1B4F91);
+/* leading-trim: both;
+text-edge: cap; */
+font-family: Inter;
+font-size: 24px;
+font-style: normal;
+font-weight: 500;
+line-height: normal;
+  }
+  .decimal {
+    color: var(--Primary, #1B4F91);
+    leading-trim: both;
+    text-edge: cap;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+ 
+  .rupee-img{
+   
+        vertical-align: baseline;
+   
+  }
+ 
+  .enabled-button {
+    background-color: #1B4F91; /* Change to your desired blue color */
+    cursor: pointer;
+    /* Add any additional styles for an enabled button */
+}

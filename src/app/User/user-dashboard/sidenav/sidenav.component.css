@@ -1,0 +1,94 @@
+.mat-expansion-panel.active {
+  background-color: #f5f5f5;
+  border-radius: 8px;
+}
+.sidenav {
+  display: inline-flex;
+  margin-top: 39px;
+  margin-left: 60px;
+  height: 855px;
+  width: 260px;
+  padding: 42px 3px 122px 33px;
+  flex-direction: column;
+  align-items: flex-start;
+  flex-shrink: 0;
+  border-radius: 12px;
+   border: 1px solid var(--Border, rgba(27, 79, 145, 0.25));
+}
+ 
+/* Remove border and shadow from mat-expansion-panel */
+.mat-expansion-panel {
+  border: none;
+  box-shadow: none;
+}
+ 
+.home-icon, .transfer-icon , .enquiries-icon {
+  color: black;
+  font-size: 18px;
+  margin-top: -33px;
+  margin-left: 8px;
+}
+.dropdown-margin{
+  margin-left: -20px;
+  width: 200px;
+}
+
+.lol {
+  margin-left: -20px;
+  width: 200px;
+}
+ 
+ .lol:hover{
+  background-color: rgba(27, 79, 145, 0.25);
+  border: 0.1rem #000000;
+  border-radius: 0.6rem;
+  /* box-shadow: 0 0.4rem 0.4rem rgba(0, 0, 0, 0.25); */
+  box-sizing: border-box;
+ }
+
+ .dropdown-panel:hover {
+  background-color: #E8EDF4; /* Change background color on hover */
+}
+ 
+mat-icon {
+  color: black;
+  font-size: 18px;
+  margin-top: 2px;
+}
+ 
+ 
+/* Style for the expansion panels */
+.mat-expansion-panel {
+  margin-bottom: 8px; /* Adjust margin between panels */
+  width: 210px;
+}
+ 
+/* Style for the expansion panel headers */
+.mat-expansion-panel-header {
+ 
+  color: #333; /* Text color for the header */
+  padding: 8px; /* Padding for the header */
+  cursor: pointer; /* Change cursor to pointer on hover */
+}
+ 
+/* Style for the list items */
+.mat-list-item {
+  padding: 8px 16px; /* Adjust padding as needed */
+  display: block; /* Ensure list items are displayed as blocks */
+  color: #f0f0f0; /* Text color for the list items */
+  text-decoration: none; /* Remove default text decoration */
+}
+ 
+.mat-list-item:hover {
+  border-radius: 8px;
+}
+ 
+ 
+/* Style for the list items on hover */
+.mat-list-item:hover {
+  background-color: #f5f5f5; /* Background color on hover */
+ 
+}
+.lol{
+  margin-left: -19px;
+}

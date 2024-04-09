@@ -1,0 +1,43 @@
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" href="/favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#000000" />
+  <title>To Self Account 3</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter%3A400%2C500" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro%3A400%2C500" />
+  <!-- <link rel="stylesheet" href="./styles/to-self-account-3.css"/> -->
+</head>
+<mat-nav-list class="sidenav">
+  <a mat-list-item routerLink="/user-dashboard">&nbsp;&nbsp;&nbsp;  Home</a>
+  <mat-icon class="home-icon">home</mat-icon>
+  <br>
+
+  <a mat-list-item routerLink="/transaction-summary">&nbsp;&nbsp;&nbsp;  Transaction Summary</a>
+  <mat-icon class="transfer-icon">assignment</mat-icon>
+  <br>
+
+  <a mat-list-item routerLink="/transfer">&nbsp;&nbsp;&nbsp;  Transfer</a>
+  <mat-icon class="transfer-icon">swap_horiz</mat-icon>
+  <br>
+
+  <mat-expansion-panel class="dropdown-panel">
+    <mat-expansion-panel-header >
+      <mat-icon>account_balance</mat-icon> Account
+    </mat-expansion-panel-header>
+    <a mat-list-item (click)="redirectToComponent1()" class="lol">Account Details</a>
+    <a mat-list-item (click)="redirectToComponent2()" class="lol">Account Balance</a>
+    <a mat-list-item (click)="redirectToComponent3()" class="lol">Account Closure</a>
+  </mat-expansion-panel>
+  <br>
+
+  <mat-expansion-panel class="dropdown-panel">
+    <mat-expansion-panel-header>
+      <mat-icon>person</mat-icon> Profile
+    </mat-expansion-panel-header>
+    <a mat-list-item (click)="redirectToComponent4()" class="lol">Setup Profile</a>
+    <a mat-list-item (click)="redirectToComponent5()" class="lol">Change Password</a>
+    <a mat-list-item (click)="redirectToComponent6()" class="lol">Setup Budget</a>
+    <a mat-list-item (click)="redirectToComponent7()" class="lol">Manage Notifications</a>
+  </mat-expansion-panel>
+</mat-nav-list>

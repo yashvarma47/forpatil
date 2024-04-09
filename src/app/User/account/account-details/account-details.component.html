@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" href="/favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#000000" />
+  <title>To Self Account 3</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter%3A400%2C500" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro%3A400%2C500" />
+  <!-- <link rel="stylesheet" href="./styles/to-self-account-3.css"/> -->
+
+
+</head>
+
+<body>
+
+<app-header></app-header>
+<app-sidenav></app-sidenav>
+
+  <div class="container">
+
+    <div class="transfer">
+      <div class="box1">
+        <div class="title">Account Details</div>
+      </div>
+      <div class="fields4">
+        <label class="label" for="Accountholder">Account holder</label>
+        <input type="text" id="Accountholder" class="TransactionNote-input"
+          [(ngModel)]="customerDetails.accountHolder" readonly/>
+      </div>
+
+      <div class="fields4">
+        <label class="label" for="Branch">Branch</label>
+        <input type="text" id="Branch" class="TransactionNote-input" [(ngModel)]="customerDetails.branch" readonly/>
+      </div>
+
+      <div class="fields4">
+        <label class="label" for="IFSC">IFSC</label>
+        <input type="text" id="IFSC" class="TransactionNote-input" [(ngModel)]="customerDetails.ifscCode" readonly/>
+      </div>
+      <div class="fields4">
+        <label class="label" for="AccountBalance(INR)">Account Balance (INR)</label>
+        <input type="text" id="AccountBalance" class="TransactionNote-input"
+          [(ngModel)]="customerDetails.accountBalance" readonly />
+      </div>
+      <div class="fields4">
+        <label class="label" for="UnclearedFunds(INR)">Uncleared Funds (INR)</label>
+        <input type="text" id="UnclearedFunds" class="TransactionNote-input"
+          [(ngModel)]="customerDetails.unclearedFunds" readonly />
+      </div>
+      <div class="fields4">
+        <label class="label" for="AmountonHold">Amount on Hold (INR)</label>
+        <input type="text" id="AmountonHold" class="TransactionNote-input" [(ngModel)]="customerDetails.amountOnHold" readonly />
+      </div>
+      <div class="fields4">
+        <label class="label" for="Status">Status</label>
+        <input type="text" id="Status" class="TransactionNote-input" placeholder="Active"
+          [(ngModel)]="customerDetails.status" readonly />
+      </div>
+
+      <div class="box2">
+        <div class="title">Card Details</div>
+      </div>
+      <div class="fields4">
+        <label class="label" for="Primarycard">Primary card</label>
+        <input type="text" id="Primarycard" class="TransactionNote-input" placeholder=""
+          [(ngModel)]="customerDetails.primaryCard" />
+      </div>
+      <div class="fields4">
+        <label class="label" for="SpendingLimit">Spending Limit</label>
+        <input type="text" id="SpendingLimit" class="TransactionNote-input" placeholder=""
+          [(ngModel)]="customerDetails.spendingLimit" />
+      </div>
+
+    </div>
+
+
+
+
+
+
+    <div class="transfer2">
+      <div class="account-div">
+
+        <p class="account-title">Switch Account</p>
+        <div class=".select-wrapper">
+          <div class="account-select">
+            <select class="scacc" id="chooseAcc" [(ngModel)]="chooseAcc" (change)="onAccountTypeChange()">
+
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none"
+                class="custom-arrow-svg">
+                <g clip-path="url(#clip0_642_111)">
+                  <path d="M7.604 12.2667L-0.395996 3.73334H15.604L7.604 12.2667Z" fill="black" />
+                </g>
+                <defs>
+                  <clipPath id="clip0_642_111">
+                    <rect width="16" height="16" fill="white" />
+                  </clipPath>
+                </defs>
+              </svg>
+              <option class="scacc-opp" *ngFor="let option of dropdownOptionschooseAcc" [value]="option.value">{{
+                option.label }}</option>
+            </select>
+
+            <select class="accno" id="chooseAccNo" [(ngModel)]="chooseAccNo" (change)="onSelectAccountNo($event)">
+              <option class="accno-opp" *ngFor="let option of dropdownOptionschooseAccNo; let i = index" [value]="option.value">
+                {{ option.label }}
+              </option>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none"
+              class="custom-arrow-svg">
+              <g clip-path="url(#clip0_642_111)">
+                <path d="M7.604 12.2667L-0.395996 3.73334H15.604L7.604 12.2667Z" fill="black" />
+              </g>
+              <defs>
+                <clipPath id="clip0_642_111">
+                  <rect width="16" height="16" fill="white" />
+                </clipPath>
+              </defs>
+            </svg>
+            </select>
+          </div>
+        </div>
+
+
+
+      </div>
+    </div>
+  </div>
+  <!-- <div class="containor2">
+ 
+  </div> -->
+
+
+
+</body>
+
+</html>

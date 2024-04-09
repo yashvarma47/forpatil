@@ -1,0 +1,78 @@
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter%3A400%2C500" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro%3A400%2C500" />
+<app-header></app-header>
+<app-admin-sidenav></app-admin-sidenav>
+<div class="container">
+ 
+    <div class="closeaccount">
+ 
+        <div class="box1">
+            <div class="title">Close Account</div>
+        </div>
+        <div class="maincontent">
+            <div class="chooseTicket">
+                <label for="chooseTicketlabel" class="forlabel">Choose Ticket<span class="star">*</span></label>
+                <select title="Select account type" id="accountType" class="accounttypedropdown"
+                    (change)="onSelectTicketId($event)">
+                    <option class="SavingText" disabled selected>Select</option>
+                    <option *ngFor="let ticketId of ticketIds" [value]="ticketId">{{ ticketId }}</option>
+                </select>
+            </div>
+ 
+            <div class="fields4">
+                <label class="forlabel" for="Branch">Customer Id<span class="star">*</span></label>
+                <input type="text" id="Branch" class="forinput" [(ngModel)]="ticketDetails.customerId" readonly />
+            </div>
+            <div class="fields4">
+                <label class="forlabel" for="Available Balance (INR)">Available Balance (INR)</label>
+                <input type="text" id="Available Balance (INR)" class="forinput" [(ngModel)]="availableBalance"
+                    readonly />
+            </div>
+            <!-- <div class="tohide"> -->
+            <div class="fields4" *ngIf="isBalanceGreaterThanZero()">
+                <label class="forlabel" for="Status">Status</label>
+                <input type="text" id="Status" class="forinput" [(ngModel)]="accountStatus" readonly />
+            </div>
+            <div class="fields4" *ngIf="isBalanceGreaterThanZero()">
+                <label class="forlabel" for="TransferFunds">Transfer Funds<span class="star">*</span></label>
+                <input type="text" id="TransferFunds" class="forinput" [(ngModel)]="ticketDetails.transferFund"
+                    readonly />
+            </div>
+            <div class="fields4" *ngIf="isBalanceGreaterThanZero()">
+                <label class="forlabel" for="RecipientAccountNumber">Recipient Account Number<span
+                        class="star">*</span></label>
+                <input type="text" id="RecipientAccountNumber" class="forinput"
+                    [(ngModel)]="ticketDetails.recipientAccountNumber" readonly />
+            </div>
+            <!-- <div class="fields4" *ngIf="isBalanceGreaterThanZero()">
+                    <label class="forlabel" for="RecipientIFSC">Recipient IFSC*</label>
+                    <input type="text" id="RecipientIFSC" class="forinput" readonly />
+                </div> -->
+            <!-- </div> -->
+            <div class="reason">
+                <label class="forreasonlabel" for="Customer Id">Reason<span class="star">*</span></label>
+                <input type="text" id="" class="forreasoninput" placeholder="Add Reason"
+                    [(ngModel)]="ticketDetails.feedback" />
+            </div>
+            <div class="forbuttons" *ngIf="!isBalanceGreaterThanZero()">
+                <button class="cancel" (click)="openPopup()">Deny</button>
+                <button class="updatebutton" (click) ="closeAccount()">Close Account</button>
+            </div>
+ 
+            <div class="hiddenbuttons" *ngIf="isBalanceGreaterThanZero()">
+                <button class="closeacc" (click)="transferFundsAndCloseAccount()">Transfer funds & Close
+                    Account</button>
+                <button class="Deny" (click)="openPopup()">Deny</button>
+            </div>
+ 
+            <div *ngIf="isPopupOpen">
+                <app-deny-confirmation (submitReason)="handleReasonSubmission($event)" (cancel)="closePopup()"
+                    [isPopupOpen]="isPopupOpen"></app-deny-confirmation>
+ 
+            </div>
+        </div>
+        <div  *ngIf="isUpdateTicket" class="updateTicket">
+            Ticket updated succesfully.
+        </div>
+    </div>
+</div>

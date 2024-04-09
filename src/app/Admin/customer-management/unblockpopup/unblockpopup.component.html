@@ -1,0 +1,45 @@
+<app-header></app-header>
+<app-admin-sidenav></app-admin-sidenav>
+<head>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter%3A400%2C500" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro%3A400%2C500" />
+</head>
+<div class="container" [formGroup]="OpenBlockForm">
+   
+    <!--  -->
+    <div class="transfer2">
+      <div class="box1">
+        <div class="title">Unblock Account</div>
+ 
+        <div class="fields4">
+          <label class="label" for="AccNo" class="div-2">Account Number<span class="star">*</span></label>
+          <input type="number" id="AccNo" class="TransactionNote-input" maxlength="12" formControlName="accountNumber" (input)="limitTo11Digits($event)" />
+        </div>
+      </div>
+      <!-- <div class="fields4">
+        <label class="label" for="ChooseBlock" class="div-2">Status</label>
+        <input type="number" id="AccNo" class="TransactionNote-input" maxlength="12" formControlName="accountNumber" (input)="limitTo11Digits($event)" readonly/>
+      </div> -->
+      <!-- <div class="fields4">
+        <label class="label" for="ChooseBlock" class="div-2">Status</label>
+        <input type="text" id="Status" class="TransactionNote-input" maxlength="12" formControlName="blockType" readonly/>
+      </div> -->
+
+      <div class="fields4">
+        <label class="label" for="ChooseBlock" class="div-2">Status</label>
+        <select id="ChooseBlock" class="TransactionNote-input" formControlName="blockType">
+          <option *ngFor="let option of dropdownChooseBlock" [value]="option.value">{{ option.label }}</option>
+        </select>
+      </div>
+ 
+      <div class="fields4">
+        <label class="label" for="reason" class="div-2">Reason<span class="star">*</span></label>
+        <input type="text" id="reason" class="Reason-input" formControlName="reason" />
+      </div>
+ 
+      <div class="btns">
+        <button class="submit-btn" (click)="submitbtn($event)">Unblock Account</button>
+      </div>
+    </div>
+  </div>
+ 

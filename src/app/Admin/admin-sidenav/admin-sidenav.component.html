@@ -1,0 +1,49 @@
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter%3A400%2C500" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro%3A400%2C500" />
+<mat-nav-list class="sidenav">
+  <a class="home" mat-list-item routerLink="/admin-home"
+    >&nbsp;&nbsp;&nbsp; Home</a
+  >
+  <mat-icon class="home-icon">home</mat-icon>
+  <br />
+  <mat-expansion-panel class="dropdown-panel">
+    <mat-expansion-panel-header class="registration">
+      <mat-icon>assignment</mat-icon> Registration
+    </mat-expansion-panel-header>
+    <a
+      class="create-customer"
+      mat-list-item
+      (click)="redirectToCreateCustomer()"
+      >Create Customer</a
+    >
+    <a class="open-account" mat-list-item (click)="redirectToOpenAccount()"
+      >Open Account</a
+    >
+  </mat-expansion-panel>
+  <mat-expansion-panel class="dropdown-panel">
+    <mat-expansion-panel-header class="customer-management">
+      <mat-icon>assignment</mat-icon> Customer Management
+    </mat-expansion-panel-header>
+    <a class="block-account" mat-list-item (click)="redirectToBlockAccount()"
+      >Block/Unblock Account</a
+    >
+    <a class="close-account" mat-list-item (click)="redirectToCloseAccount()"
+      >Close Account</a
+    >
+    <a
+      class="delete-customer"
+      mat-list-item
+      (click)="redirectToDeleteCustomer()"
+      >Delete Customer</a
+    >
+  </mat-expansion-panel>
+  <a class="transfer" mat-list-item routerLink="/admin-transfer"
+    >&nbsp;&nbsp;&nbsp; Transfer</a
+  >
+  <mat-icon class="transfer-icon">swap_horiz</mat-icon>
+  <br />
+  <a class="enquiries" mat-list-item routerLink="/admin-enquiries"
+    >&nbsp;&nbsp;&nbsp; Enquiries</a
+  >
+  <mat-icon class="enquiries-icon">help_outline</mat-icon><br />
+</mat-nav-list>

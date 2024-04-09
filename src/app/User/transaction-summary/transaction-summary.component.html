@@ -1,0 +1,224 @@
+<!-- transaction-summary.component.html -->
+<app-header></app-header>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter%3A400%2C500" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro%3A400%2C500" />
+<div class="main-container">
+    <div>
+        <app-sidenav></app-sidenav>
+    </div>
+    <div class="content">
+        <div class="container">
+            <div class="top-frame">
+                <div class="top-frame-inner-content">
+                    <div class="account-details-container">
+                        <div class="account-details">
+                            <div class="account-type">
+                                <div class="account-details-type">
+                                    <ng-container *ngIf="chooseAcc === 'SAVINGS'">Savings Account</ng-container>
+                                    <ng-container *ngIf="chooseAcc === 'CURRENT'">Current Account</ng-container>
+                                    <ng-container *ngIf="chooseAcc !== 'SAVINGS' && chooseAcc !== 'CURRENT'">Unknown
+                                        Account Type</ng-container>
+                                </div>
+                                <div class="account-details-account-number">
+                                    {{chooseAccNo}}
+                                </div>
+
+                            </div>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="2" height="58" viewBox="0 0 2 58"
+                                fill="none">
+                                <path d="M1 57L1 1" stroke="#1B4F91" stroke-opacity="0.25" stroke-width="0.4"
+                                    stroke-linecap="round" />
+                            </svg>
+
+                            <div class="account-type">
+                                <div class="account-details-type">
+                                    Available balance
+                                </div>
+
+                                <div class="account-balance">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
+                                        fill="none">
+                                        <path
+                                            d="M2.57398 11.702L6.48862 15.6167H4.74471L1.05 11.922V10.3833H3.33333L3.33349 10.3833C3.75601 10.382 4.16777 10.25 4.51222 10.0052C4.85666 9.76052 5.11689 9.41516 5.25716 9.0166L5.2806 8.95H5.21H1.05V7.71667H5.21H5.28089L5.2571 7.64989C4.97437 6.85632 4.22354 6.28333 3.33333 6.28333H1.05V5.05H8.28333V6.28333H5.98267H5.88083L5.94311 6.36391C6.24172 6.75027 6.4491 7.19915 6.54974 7.67697L6.5581 7.71667H6.59867H8.28333V8.95H6.59867H6.55789L6.54969 8.98994C6.39755 9.73096 5.99455 10.3968 5.40864 10.8753C4.82272 11.3538 4.08974 11.6157 3.33327 11.6167H2.60933H2.48862L2.57398 11.702Z"
+                                            fill="#1B4F91" stroke="white" stroke-width="0.1" />
+                                    </svg>
+                                    <span class="amount"
+                                        [attr.dataAfterDecimal]="getDigitsAfterDecimal(balanceAmount)">{{ formatAmount(balanceAmount) }}.</span>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="switch-account-container">
+
+                            <div class="account-div">
+
+                                <p class="account-title">Switch Account</p>
+                                <div class=".select-wrapper">
+                                    <div class="account-select">
+                                        <select class="scacc" id="chooseAcc" [(ngModel)]="chooseAcc"
+                                            (change)="onAccountTypeChange()">
+
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                viewBox="0 0 16 16" fill="none" class="custom-arrow-svg">
+                                                <g clip-path="url(#clip0_642_111)">
+                                                    <path d="M7.604 12.2667L-0.395996 3.73334H15.604L7.604 12.2667Z"
+                                                        fill="black" />
+                                                </g>
+                                                <defs>
+                                                    <clipPath id="clip0_642_111">
+                                                        <rect width="16" height="16" fill="white" />
+                                                    </clipPath>
+                                                </defs>
+                                            </svg>
+                                            <option class="scacc-opp" *ngFor="let option of dropdownOptionschooseAcc"
+                                                [value]="option.value">{{
+                                                option.label }}</option>
+                                        </select>
+
+                                        <select class="accno" id="chooseAccNo" [(ngModel)]="chooseAccNo"
+                                            (change)="onSelectAccountNo($event)">
+                                            <option class="accno-opp"
+                                                *ngFor="let option of dropdownOptionschooseAccNo; let i = index"
+                                                [value]="option.value">
+                                                {{ option.label }}
+                                            </option>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                viewBox="0 0 16 16" fill="none" class="custom-arrow-svg">
+                                                <g clip-path="url(#clip0_642_111)">
+                                                    <path d="M7.604 12.2667L-0.395996 3.73334H15.604L7.604 12.2667Z"
+                                                        fill="black" />
+                                                </g>
+                                                <defs>
+                                                    <clipPath id="clip0_642_111">
+                                                        <rect width="16" height="16" fill="white" />
+                                                    </clipPath>
+                                                </defs>
+                                            </svg>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Date DIV -->
+                            <div class="date-div">
+                                <p class="start-title">Start Date</p>
+                                <p class="end-title">End Date</p>
+                                <div class="select-wrapper">
+                                    <div class="account-select">
+                                        <input type="date" id="startDate" class="lol" [min]="getMinDate()"
+                                            [max]="getMaxDate()" [(ngModel)]="startDate">
+                                        <input type="date" id="endDate" class="lol" [min]="getMinDate()"
+                                            [max]="getMaxDate()" [(ngModel)]="endDate" (ngModelChange)="onEndDateSelected()">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="recent-transactions-container">
+                        <span class="recent-transactions">
+                            <select class="accno" id="transactionFilter" [(ngModel)]="transactionFilter"
+                                (ngModelChange)="onFilterChange()">
+
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
+                                    fill="none" class="custom-arrow-svg">
+                                    <g clip-path="url(#clip0_642_111)">
+                                        <path d="M7.604 12.2667L-0.395996 3.73334H15.604L7.604 12.2667Z" fill="black" />
+                                    </g>
+                                    <defs>
+                                        <clipPath id="clip0_642_111">
+                                            <rect width="16" height="16" fill="white" />
+                                        </clipPath>
+                                    </defs>
+                                </svg>
+                                <option class="accno" *ngFor="let option of transactionFilterOptions">{{ option }}
+                                </option>
+                            </select>
+                        </span>
+
+                        <a class="download-transactions" (click)="DownloadStatement()">
+                            Download Statement
+                        </a>
+                    </div>
+                </div>
+                <div *ngIf="showOptions" class="options-menu">
+                    <button class="download-transactions-btns" (click)="downloadCSV()">CSV</button>
+                    <button class="download-transactions-btns" (click)="downloadXLS()">XLS</button>
+                    <button class="download-transactions-btns" (click)="downloadPDF()">PDF</button>
+                </div>
+            </div>
+            <div class="gap"></div>
+            <div class="table-container" id="pdfContent">
+                <div class="gap2"></div>
+                <div class="table-header">
+                    <div class="header-rectangle">
+                        <span class="date-cell">Date</span>
+                        <span class="narration-cell">Narration</span>
+                        <span class="check-ref-no-cell">Check/Ref No.</span>
+                        <span class="withdrawl-cell">Withdrawal</span>
+                        <span class="deposit-cell">Deposit</span>
+                        <span class="closing-balance-cell">Closing Balance</span>
+                    </div>
+                </div>
+                <div class="table-content">
+                    <mat-table [dataSource]="dataSource" class="">
+
+                        <!-- Date Column -->
+                        <ng-container matColumnDef="transactionTime">
+                            <mat-header-cell *matHeaderCellDef>Date</mat-header-cell>
+                            <mat-cell *matCellDef="let transaction" class="date-cell">{{
+                                formatDate(transaction.transactionTime)
+                                }}</mat-cell>
+                        </ng-container>
+
+                        <!-- Narration Column -->
+                        <ng-container matColumnDef="narratives">
+                            <mat-header-cell *matHeaderCellDef>Narration</mat-header-cell>
+                            <mat-cell *matCellDef="let transaction" class="narration-cell">{{ transaction.narratives
+                                }}</mat-cell>
+                        </ng-container>
+
+                        <!-- Check/RefNo. Column -->
+                        <ng-container matColumnDef="transactionId">
+                            <mat-header-cell *matHeaderCellDef>Check/Ref No.</mat-header-cell>
+                            <mat-cell *matCellDef="let transaction" class="check-ref-no-cell">{{
+                                transaction.transactionId
+                                }}</mat-cell>
+                        </ng-container>
+
+                        <!-- Deposit Column -->
+                        <ng-container matColumnDef="deposit">
+                            <mat-header-cell *matHeaderCellDef>Deposit</mat-header-cell>
+                            <mat-cell *matCellDef="let transaction" class="deposit-cell">{{
+                                getDepositAmount(transaction)
+                                }}</mat-cell>
+                        </ng-container>
+
+                        <!-- Withdrawal Column -->
+                        <ng-container matColumnDef="withdrawal">
+                            <mat-header-cell *matHeaderCellDef>Withdrawal</mat-header-cell>
+                            <mat-cell *matCellDef="let transaction" class="withdrawl-cell">{{
+                                getWithdrawalAmount(transaction)
+                                }}</mat-cell>
+                        </ng-container>
+
+                        <!-- Closing Balance Column -->
+                        <ng-container matColumnDef="remainingBalance">
+                            <mat-header-cell *matHeaderCellDef>Closing Balance</mat-header-cell>
+                            <mat-cell *matCellDef="let transaction" class="closing-balance-cell">{{
+                                formatAmountremainingbalance(transaction.remainingBalance)
+                                }}</mat-cell>
+                        </ng-container>
+
+                        <!-- <mat-header-row *matHeaderRowDef="displayedColumns" class="table-card-header"></mat-header-row> -->
+                        <mat-row *matRowDef="let row; columns: displayedColumns;" class="row-with-border"></mat-row>
+                    </mat-table>
+                    <div *ngIf="noData">
+                        <br>
+                            <p style="text-align: center;">No Data Found </p>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

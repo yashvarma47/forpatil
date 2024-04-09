@@ -1,0 +1,82 @@
+<app-header></app-header>
+<app-admin-sidenav></app-admin-sidenav>
+ 
+<head>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter%3A400%2C500" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro%3A400%2C500" />
+</head>
+ 
+<div class="frame-340">
+  <div (click)="onCustomerBtnClick()" class="customer-btn" [ngClass]="{'active': showCustomerDetails && !showAccountDetails}" type="button">Customers</div>
+  <div (click)="onAccountBtnClick()" class="accounts-btn" [ngClass]="{'active': showAccountDetails && !showCustomerDetails}" type="button">Accounts</div>
+  <!-- Add the search inputs and bind them to the respective variables -->
+<input *ngIf="showCustomerDetails && !showAccountDetails" class="customer-search" [(ngModel)]="customerSearchInput" (input)="onCustomerSearchChange()" id="customersearch" type="text" placeholder="Search Customer Id" maxlength="8">
+<input *ngIf="showAccountDetails && !showCustomerDetails" class="account-search" [(ngModel)]="accountSearchInput" (input)="onAccountSearchChange()" id="accountsearch" type="text" placeholder="Search Account No" maxlength="11">
+    <!-- "Create Customer" button will only be visible when showCustomerDetails is true and showAccountDetails is false -->
+    <div *ngIf="showCustomerDetails && !showAccountDetails" class="create-customer-btn" type="button" (click)="onCreateCustomerClick()">Create Customer</div>
+    <!-- "Create Account" button will only be visible when showAccountDetails is true and showCustomerDetails is false -->
+    <div *ngIf="showAccountDetails && !showCustomerDetails" class="create-customer-btn" type="button" (click)="onCreateAccountClick()" >Create Account</div>
+ 
+</div>
+<div>
+  <!-- Error messages for Customer Search -->
+  <div *ngIf="showCustomerDetails">
+    <div *ngIf="customerSearchInput && customerSearchInput.toString().length < 8" class="error-message">Customer ID must be 8 digits</div>
+  </div>
+   
+  <!-- Error messages for Account Search -->
+  <div *ngIf="showAccountDetails">
+    <div *ngIf="accountSearchInput && accountSearchInput.toString().length < 11" class="error-message">Account Number must be 11 digits</div>
+  </div>
+   
+  </div>
+<div class="container">
+  <div class="Customer">
+    <table *ngIf="showCustomerDetails" class="customer-table">
+      <thead>
+        <tr>
+          <th class="customer-id">CustomerID</th>
+          <th class="first-name">First Name</th>
+          <th class="last-name">Last Name</th>
+          <th class="view-account"> </th>
+          <th class="view-details"> </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let customer of customers">
+          <td id="customerID" class="customer-id">{{ customer.customerId }}</td>
+          <td id="firstname" class="first-name">{{ customer.firstName }}</td>
+          <td id="lastname" class="last-name">{{ customer.lastName }}</td>
+          <!-- <td id="viewaccount" class="view-account"><a href="#">View Account</a></td>
+          <td id="viewdetails" class="view-details"><a href="#">View Customer Details</a></td> -->
+          
+          <td id="viewaccount" class="view-account"><a>View Account</a></td>
+          <td id="viewdetails" class="view-details"><a>View Customer Details</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <!-- Add the following div for displaying account details -->
+  <div class="Account" *ngIf="showAccountDetails">
+    <table class="account-table">
+      <thead>
+        <tr>
+          <th class="account-number">Account Number</th>
+          <th class="account-type">Type</th>
+          <th class="account-status">Status</th>
+          <th class="account-balance">Balance</th>
+          <th class="make-payment"> </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let account of accounts">
+          <td id="accountnumber" class="account-number">{{ account.accountnumber }}</td>
+          <td id="accounttype" class="account-type">{{ account.accounttype }}</td>
+          <td id="accountstatus" [style.color]="getAccountStatusColor(account.accountstatus)">{{ account.accountstatus }}</td>
+          <td id="accountbalance" class="account-balance">₹ {{ account.totalbalance }}</td>
+          <td id="makepayment" class="make-payment"><a href="http://localhost:4200/admin-transfer">Make a Payment</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

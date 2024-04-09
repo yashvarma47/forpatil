@@ -1,0 +1,366 @@
+<app-header></app-header>
+<app-admin-sidenav></app-admin-sidenav>
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" href="/favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#000000" />
+  <title>To Self Account 3</title>
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Inter%3A400%2C500"
+  />
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Source+Sans+Pro%3A400%2C500"
+  />
+</head>
+
+<div class="container">
+  <div class="customer">
+    <form [formGroup]="newCustomerForm" (ngSubmit)="submitNewCustomerForm()">
+      <div class="box1">
+        <div class="title">Create Customer</div>
+      </div>
+      <div class="fields-container">
+        <!-- Left Container -->
+        <div class="left-container">
+          <div class="fields">
+            <!-- <label class="label" for="TransactionNote">First Name*</label>
+<input type="text" id="TransactionNote" class="TransactionNote-input" /> -->
+            <label for="firstName">First Name<span class="star">*</span></label>
+            <input
+              type="text"
+              id="firstName"
+              class="TransactionNote-input"
+              formControlName="firstName"
+              maxlength="15"
+            />
+          </div>
+          <div
+            class="error-message"
+            *ngIf="
+              shouldShowError('firstName') &&
+              (newCustomerForm.get('firstName')?.hasError('required') ||
+                (formSubmitted && !newCustomerForm.get('firstName')?.value))
+            "
+          >
+            First Name is required
+          </div>
+          <div
+            class="error-message"
+            *ngIf="
+              shouldShowError('firstName') &&
+              newCustomerForm.get('firstName')?.hasError('containsNumber')
+            "
+          >
+            First Name cannot contain numbers
+          </div>
+
+          <div class="fields">
+            <label for="lastName">Last Name<span class="star">*</span></label>
+            <input
+              type="text"
+              id="lastName"
+              class="TransactionNote-input"
+              formControlName="lastName"
+              maxlength="20"
+            />
+          </div>
+          <div
+            class="error-message"
+            *ngIf="
+              shouldShowError('lastName') &&
+              (newCustomerForm.get('lastName')?.hasError('required') ||
+                (formSubmitted && !newCustomerForm.get('lastName')?.value))
+            "
+          >
+            Last Name is required
+          </div>
+          <div
+            class="error-message"
+            *ngIf="
+              shouldShowError('lastName') &&
+              newCustomerForm.get('lastName')?.hasError('containsNumber')
+            "
+          >
+            Last Name cannot contain numbers
+          </div>
+          <div class="fields">
+            <label for="street">Street<span class="star">*</span></label>
+            <input
+              type="text"
+              id="street"
+              class="TransactionNote-input"
+              formControlName="street"
+              maxlength="50"
+            />
+          </div>
+          <div
+            class="error-message"
+            *ngIf="
+              shouldShowError('street') &&
+              (newCustomerForm.get('street')?.hasError('required') ||
+                (formSubmitted && !newCustomerForm.get('street')?.value))
+            "
+          >
+            Current Address is required
+          </div>
+          <div class="fields">
+            <label for="city">City<span class="star">*</span></label>
+            <input
+              type="text"
+              id="city"
+              class="TransactionNote-input"
+              formControlName="city"
+              maxlength="20"
+            />
+          </div>
+          <div
+            class="error-message"
+            *ngIf="
+              shouldShowError('city') &&
+              (newCustomerForm.get('city')?.hasError('required') ||
+                (formSubmitted && !newCustomerForm.get('city')?.value))
+            "
+          >
+            City is required
+          </div>
+          <div class="fields">
+            <label for="state">State<span class="star">*</span></label>
+            <select
+              id="state"
+              class="TransactionNote-input"
+              formControlName="state"
+            >
+              <option value="Andhra Pradesh">Andhra Pradesh</option>
+              <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+              <option value="Assam">Assam</option>
+              <option value="Bihar">Bihar</option>
+              <option value="Chhattisgarh">Chhattisgarh</option>
+              <option value="Goa">Goa</option>
+              <option value="Gujarat">Gujarat</option>
+              <option value="Haryana">Haryana</option>
+              <option value="Himachal Pradesh">Himachal Pradesh</option>
+              <option value="Jharkhand">Jharkhand</option>
+              <option value="Karnataka">Karnataka</option>
+              <option value="Kerala">Kerala</option>
+              <option value="Madhya Pradesh">Madhya Pradesh</option>
+              <option value="Maharashtra">Maharashtra</option>
+              <option value="Manipur">Manipur</option>
+              <option value="Meghalaya">Meghalaya</option>
+              <option value="Mizoram">Mizoram</option>
+              <option value="Nagaland">Nagaland</option>
+              <option value="Odisha">Odisha</option>
+              <option value="Punjab">Punjab</option>
+              <option value="Rajasthan">Rajasthan</option>
+              <option value="Sikkim">Sikkim</option>
+              <option value="Tamil Nadu">Tamil Nadu</option>
+              <option value="Telangana">Telangana</option>
+              <option value="Tripura">Tripura</option>
+              <option value="Uttar Pradesh">Uttar Pradesh</option>
+              <option value="Uttarakhand">Uttarakhand</option>
+              <option value="West Bengal">West Bengal</option>
+            </select>
+          </div>
+          <div
+            class="error-message"
+            *ngIf="
+              shouldShowError('state') &&
+              (newCustomerForm.get('state')?.hasError('required') ||
+                (formSubmitted && !newCustomerForm.get('state')?.value))
+            "
+          >
+            State is required
+          </div>
+          <div class="fields">
+            <label for="zipcode">Zip Code<span class="star">*</span></label>
+            <input
+              type="text"
+              id="zipcode"
+              class="TransactionNote-input"
+              formControlName="zipcode"
+              maxlength="6"
+              (input)="limitTo6Digits($event, 'zipcode')"
+            />
+          </div>
+          <div
+            class="error-message"
+            *ngIf="
+              shouldShowError('zipcode') &&
+              (newCustomerForm.get('zipcode')?.hasError('required') ||
+                (formSubmitted && !newCustomerForm.get('zipcode')?.value))
+            "
+          >
+            Zip Code is required
+          </div>
+        </div>
+        <div class="right-container">
+          <div class="fields">
+            <label for="panNumber">PAN Number<span class="star">*</span></label>
+            <input
+              type="text"
+              id="panNumber"
+              class="TransactionNote-input"
+              formControlName="panNumber"
+              maxlength="10"
+              pattern="[A-Za-z]{5}[0-9]{4}[A-Za-z]{1}"
+              required
+            />
+          </div>
+          <div
+            class="error-message"
+            *ngIf="
+              shouldShowError('panNumber') &&
+              (newCustomerForm.get('panNumber')?.hasError('required') ||
+                (formSubmitted && !newCustomerForm.get('panNumber')?.value))
+            "
+          >
+            PAN Number is required
+          </div>
+          <div
+            class="error-message"
+            *ngIf="newCustomerForm.get('panNumber')?.hasError('pattern')"
+          >
+            Invalid PAN number format
+          </div>
+          <div class="fields">
+            <label for="aadharNumber"
+              >Aadhar Card<span class="star">*</span></label
+            >
+            <input
+              type="text"
+              id="aadharNumber"
+              class="TransactionNote-input"
+              formControlName="aadharNumber"
+              maxlength="12"
+              pattern="[0-9]{12}"
+              required
+            />
+          </div>
+          <div
+            class="error-message"
+            *ngIf="
+              shouldShowError('aadharNumber') &&
+              (newCustomerForm.get('aadharNumber')?.hasError('required') ||
+                (formSubmitted && !newCustomerForm.get('aadharNumber')?.value))
+            "
+          >
+            Aadhar Card is required
+          </div>
+          <div
+            class="error-message"
+            *ngIf="newCustomerForm.get('aadharNumber')?.hasError('pattern')"
+          >
+            Invalid Aadhar Card format
+          </div>
+
+          <div class="fields">
+            <label for="dateOfBirth"
+              >Date of Birth<span class="star">*</span></label
+            >
+            <input
+              type="date"
+              id="dateOfBirth"
+              class="TransactionNote-input"
+              formControlName="dateOfBirth"
+            />
+          </div>
+          <div
+            class="error-message"
+            *ngIf="
+              shouldShowError('dateOfBirth') &&
+              (newCustomerForm.get('dateOfBirth')?.hasError('required') ||
+                (formSubmitted && !newCustomerForm.get('dateOfBirth')?.value))
+            "
+          >
+            Date of Birth is required
+          </div>
+          <div
+            class="error-message"
+            *ngIf="newCustomerForm.get('dateOfBirth')?.hasError('below18')"
+          >
+            Age must be 18 or above
+          </div>
+          <div class="fields">
+            <label for="gender">Gender<span class="star">*</span></label>
+            <select
+              id="gender"
+              class="TransactionNote-input"
+              formControlName="gender"
+            >
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          <div
+            class="error-message"
+            *ngIf="
+              shouldShowError('gender') &&
+              (newCustomerForm.get('gender')?.hasError('required') ||
+                (formSubmitted && !newCustomerForm.get('gender')?.value))
+            "
+          >
+            Gender is required
+          </div>
+          <div class="fields">
+            <label for="phoneNumber">Phone No<span class="star">*</span></label>
+            <input
+              type="tel"
+              id="phoneNumber"
+              class="TransactionNote-input"
+              formControlName="phoneNumber"
+              maxlength="10"
+              (input)="limitTo10Digits($event, 'phoneNumber')"
+            />
+          </div>
+          <div
+            class="error-message"
+            *ngIf="
+              shouldShowError('phoneNumber') &&
+              (newCustomerForm.get('phoneNumber')?.hasError('required') ||
+                (formSubmitted && !newCustomerForm.get('phoneNumber')?.value))
+            "
+          >
+            Phone No is required
+          </div>
+          <div class="fields">
+            <label for="email">Email<span class="star">*</span></label>
+            <input
+              type="email"
+              id="email"
+              class="TransactionNote-input"
+              formControlName="email"
+              maxlength="50"
+            />
+          </div>
+          <div
+            class="error-message"
+            *ngIf="
+              shouldShowError('email') &&
+              (newCustomerForm.get('email')?.hasError('required') ||
+                (formSubmitted && !newCustomerForm.get('email')?.value))
+            "
+          >
+            Email is required
+          </div>
+          <div
+            class="error-message"
+            *ngIf="
+              shouldShowError('email') &&
+              newCustomerForm.get('email')?.hasError('customEmailPattern')
+            "
+          >
+            Invalid Email format
+          </div>
+        </div>
+      </div>
+      <br />
+      <div class="button-group">
+        <button class="submit" type="submit">Submit</button>
+      </div>
+    </form>
+  </div>
+</div>

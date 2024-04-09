@@ -1,0 +1,176 @@
+input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+.containor {
+  margin: -947px 96px 32px 450px !important;
+  width: 854px;
+  height: 1040px;
+  transform: rotate(90deg);
+  flex-shrink: 0;
+  border-radius: 8px;
+  border: 1px solid var(--Border, rgba(27, 79, 145, 0.25));
+  background: var(--Cards, #fff);
+  box-shadow: 0px 4px 16px 0px rgba(27, 79, 145, 0.15);
+  z-index: 1;
+}
+ 
+.transfer {
+  margin-top: 55%;
+  margin-bottom: 56%;
+  margin-right: 56%;
+  margin-left: 12%;
+  border-radius: 8px;
+  height: 548px;
+  width: 448px;
+  transform: rotate(270deg);
+  flex-shrink: 0;
+  /* border: 1px solid var(--Border, rgba(27, 79, 145, 0.25)); */
+  background: var(--Cards, #fff);
+  /* box-shadow: 0px 4px 16px 0px rgba(27, 79, 145, 0.15); */
+  z-index: 2;
+}
+ 
+.box1 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 32px;
+}
+ 
+.title {
+  display: flex;
+  width: 448px;
+  height: 40px;
+  padding: 8px 8px 8px 12px;
+  align-items: center;
+  gap: 8px;
+  border-radius: 8px;
+  background: var(--Table-Card-Header, rgba(27, 79, 145, 0.1));
+ 
+  color: var(--Primary, #1b4f91);
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+ 
+.lable {
+  color: #0b234299;
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+ 
+.fields {
+  display: flex;
+  width: 448px;
+  align-items: flex-start;
+  gap: 70px;
+}
+ 
+.dropdown {
+  display: flex;
+  height: 32px;
+  width: 235px;
+  padding: 5px;
+  justify-content: space-between;
+  align-items: center;
+  align-self: stretch;
+  border-radius: 8px;
+  border: 1px solid var(--Field-Border, rgba(19, 50, 88, 0.5));
+  background: var(--Cards, #fff);
+}
+ 
+.fields2 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-self: stretch;
+  margin-top: 24px;
+}
+ 
+.btns {
+  margin-top: 80px;
+  display: flex;
+  width: 448px;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+}
+ 
+.fields3 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-self: stretch;
+  margin-top: 24px;
+}
+ 
+.transfer-btns {
+  display: flex;
+  height: 40px;
+  padding: 8px 30px;
+  margin-top: -100px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex: 1 0 0;
+  border-radius: 6px;
+  background: var(--Primary-action-Button-Enabled, #1b4f91);
+  box-shadow: 2px 4px 4px 0px rgba(27, 79, 145, 0.15);
+  color: var(--Text-White, #fff);
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+ 
+.TransactionNote-input {
+  display: flex;
+  width: 235px;
+  height: 32px;
+  padding: 10px;
+  align-items: center;
+  border-radius: 8px;
+  border: 1px solid var(--Field-Border, rgba(19, 50, 88, 0.5));
+  background: var(--Cards, #fff);
+}
+ 
+.forparagraph {
+  margin-top: 32px;
+  height: 48px;
+  width: 742px;
+  gap: 24px;
+ 
+ 
+ 
+}
+ 
+.fortextbox {
+  width: 742px;
+  height: 96px;
+  padding: 8px, 8px, 8px, 12px;
+  border-radius: 8px;
+  gap: 8px;
+  border: 1px solid var(--Field-Border, rgba(19, 50, 88, 0.5));
+  background: var(--Cards, #fff);
+}
+ 
+.checkbox {
+  width: 549px;
+  height: 88px;
+  gap: 24px;
+}
+.Confirm{
+  margin-top: 15px;
+}
+.star {
+  color: red;
+  margin-left: 5px;
+}

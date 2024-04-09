@@ -1,0 +1,71 @@
+<app-header></app-header>
+<app-admin-sidenav></app-admin-sidenav>
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" href="/favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#000000" />
+  <title>To Self Account 3</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter%3A400%2C500" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro%3A400%2C500" />
+
+</head>
+<div class="containor">
+    <div class="transfer">
+      <div class="box1">
+        <div class="title">Open Account</div>
+ 
+        <div class="fields4">
+            <label class="label" for="TransactionNote" class="div-2">Customer Id<span class="star">*</span></label>
+            <input type="text" id="userid" class="TransactionNote-input"  [(ngModel)]="userid" (input)="onUserIdInputChange()" maxlength="8" required />
+           
+          </div>
+          <div *ngIf="UserIDerrorMessage" class="error-message">{{ UserIDerrorMessage }} <br> <button class="create-btns" (click)=navigateTo()>Create New</button> </div>
+         
+      </div>
+      <div class="fields2">
+        <label class="label" for="ToAccount" class="div-2">Account Type<span class="star">*</span></label>
+        <select class="dropdown" id="ChooseAcc" [(ngModel)]="ChooseAcc">
+          <option *ngFor="let option of dropdownChooseAcc" [value]="option.value">{{ option.label }}</option>
+        </select>
+      </div>
+ 
+      <div class="fields3">
+        <label class="label" for="AddINR" class="div-2">Currency<span class="star">*</span></label>
+        <select class="dropdown" id="ChooseCurr" [(ngModel)]="ChooseCurr">
+          <option *ngFor="let option of dropdownChooseCurr" [value]="option.value">{{ option.label }}</option>
+        </select>
+      </div>
+ 
+ 
+      <div class="div">
+        <div class="div-2">Overdraft<span class="star">*</span></div>
+        <div class="div-3">
+          <div class="div-4">
+            <img
+              loading="lazy"
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/76a81bf6b27bcd4a465ebb8aedb48aa766dac56e82aae69946fa4bb39412af25?"
+              class="img"
+            />
+            <div class="div-5">Yes</div>
+          </div>
+          <div class="div-6">
+            <img
+              loading="lazy"
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/a031aa0feb456a523935db917db69b63c39d45b7e79578b49d2255f4dd8487bd?"
+              class="img"
+            />
+            <div class="div-7">No</div>
+          </div>
+        </div>
+      </div>
+ 
+      <div class="btns">
+   
+      <button class="submit-btn" (click)="submitbtn($event)" [disabled]="!ChooseAcc" [disabled]="ChooseCurr">Open Account</button>
+      </div>
+ 
+ 
+    </div>
+</div>

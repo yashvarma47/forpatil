@@ -1,0 +1,14 @@
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter%3A400%2C500" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro%3A400%2C500" />
+<div class="popup-container">
+  <div class="popup">
+      <div class="popuptext">
+          <p>Kindly enter the reason for denying the Closure request</p>
+      </div>
+    <input type="text" [(ngModel)]="reason" placeholder="Add reason" class="input-box">
+    <div class="forbuttons">
+      <button (click)="submit()" class="submit-button">Submit</button>
+      <button (click)="cancelPopup()" class="cancel-button">Cancel</button>
+    </div>
+  </div>
+</div>

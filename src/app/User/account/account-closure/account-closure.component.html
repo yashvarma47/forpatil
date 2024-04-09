@@ -1,0 +1,70 @@
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter%3A400%2C500" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro%3A400%2C500" />
+<app-header></app-header>
+<app-sidenav></app-sidenav>
+ 
+<div class="containor">
+  <div class="transfer">
+    <div class="box1">
+      <div class="title">Account Closure</div>
+      <div class="fields">
+        <label class="label" for="selectOptionAccType">Select Account Type<span class="star">*</span></label>
+        <select class="dropdown" id="selectOptionAccType" [(ngModel)]="chooseAcc" (change)="onAccountTypeChange()">
+          <option *ngFor="let option of selectOptionAccType" [value]="option.value">{{ option.label }}</option>
+        </select>
+      </div>
+    </div>
+    <div class="fields2">
+      <label class="label" for="ToAccount">Select Account<span class="star">*</span></label>
+      <select class="dropdown" id="selectOptionTo" [(ngModel)]="chooseAccNo" (change)="onSelectAccountNo($event)">
+        <option *ngFor="let option of selectOptionTo" [value]="option.value">{{ option.label }}</option>
+      </select>
+    </div>
+ 
+    <div class="fields2">
+      <label class="label" for="AccountBalance(INR)">Account Balance (INR)</label>
+      <input type="text" id="AccountBalance" class="TransactionNote-input" [(ngModel)]="this.balanceAmount"
+        readonly />
+    </div>
+ 
+    <div class="fields3" *ngIf="balanceAmount > 0">
+      <label class="label" for="TransferFunds">Transfer Funds<span class="star">*</span></label>
+      <select class="dropdown" id="TransferFunds" [(ngModel)]="selectOptionFunds">
+      <option *ngFor="let option of dropdownOptionsFunds" [value]="option.value" >{{ option.label }}</option>
+      </select>
+      </div>
+ 
+    <div class="fields2" *ngIf="selectOptionFunds === 'Transfer to other Account'">
+      <label class="label" for="RecipientAccountNumber">Recipient Account Number<span class="star">*</span></label>
+      <input type="number" id="RecipientAccountNumber" class="TransactionNote-input"
+        [(ngModel)]="recipientAccountNumber" (input)="limitTo11Digits($event)" />
+    </div>
+ 
+    <!-- <div class="fields2" *ngIf="selectOptionFunds === 'Transfer to other Account'">
+      <label class="label" for="RecipientIFSC">Recipient IFSC*</label>
+      <input type="text" id="RecipientIFSC" class="TransactionNote-input" [(ngModel)]="customerDetails.recipientName" />
+    </div> -->
+ 
+    <div class="forparagraph">
+      <p>Closing your account will permanently delete all your data from our system.
+        This cannot be undone. Once all dues are settled, the bank will initiate the account closure process.
+        Please submit a closure request to proceed.</p>
+ 
+      <p>Before that, your feedback is valuable to us. If you're comfortable, please let us know the reason for closing
+        your account. This information helps us enhance our services and better meet the needs of our customers.</p>
+       
+        <textarea placeholder="Add feedback" [(ngModel)]="feedback" name="" id="" cols="30" rows="10" class="fortextbox"></textarea>
+ 
+        <div class="checkbox">
+          <input type="checkbox" id="confirmCheckbox" [(ngModel)]="confirmAndProceed" />
+          <label for="confirmCheckbox" class="Confirm">I Confirm that I want to proceed with closing my account</label>
+        </div>  
+     
+        <div class="btns">
+          <!-- Disable the button based on the checkbox state -->
+          <button class="transfer-btns" (click)="submitbtn($event)" [disabled]="!confirmAndProceed">Submit Request</button>
+        </div>
+ 
+    </div>
+  </div>
+</div>

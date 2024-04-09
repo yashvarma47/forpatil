@@ -1,0 +1,129 @@
+/* Add border when mat-expansion-panel is active */
+.mat-expansion-panel.active {
+  background-color: #f5f5f5;
+  border-radius: 10px;
+}
+.sidenav {
+  display: inline-flex;
+  margin-top: 39px;
+  margin-left: 60px;
+  height: 855px;
+  width: 260px;
+  padding: 42px 3px 122px 17px;
+  flex-direction: column;
+  align-items: flex-start;
+  flex-shrink: 0;
+  border-radius: 12px;
+   border: 1px solid var(--Border, rgba(27, 79, 145, 0.25));
+}
+/* Remove border and shadow from mat-expansion-panel */
+.mat-expansion-panel {
+  border: none;
+  box-shadow: none;
+}
+
+/* Optionally, adjust margin or padding for the mat-icon */
+mat-icon {
+  margin-right: 0px;
+}
+
+.transfer-icon , .enquiries-icon {
+  color: black;
+  font-size: 15px;
+  margin-top: -33px;
+  margin-left: 12px;
+}
+.home-icon {
+  color: black;
+  font-size: 15px;
+  margin-top: -33px;
+  margin-left: 15px;
+}
+.registration-icon , .customer-management-icon {
+  font-size: 15px;
+  margin-top: 4px;
+}
+.create-customer , .open-account , .block-account , .close-account , .delete-customer , .setup-profile , .change-password , .setup-budget , .manage-notification {
+  margin-left: -20px;
+  width: 200px;
+  font-size: 15px;
+}
+.home , .transfer , .enquiries {
+  color: hsla(0, 0%, 0%, 0.871);
+  font-size: 15px;
+  margin-left: 2px;
+  font-family: Roboto, sans-serif;
+}
+
+mat-icon {
+  color: black;
+  font-size: 15px;
+  margin-top: 3px;
+}
+
+/* Style for the expansion panels */
+.mat-expansion-panel {
+  margin-bottom: 8px;
+  width: 220px;
+}
+/* Style for the expansion panel headers */
+.mat-expansion-panel-header {
+  font-weight: normal;
+  color: #333;
+  padding: 12px;
+  cursor: pointer;
+  width: 220px;
+}
+.registration,
+.customer-management
+{
+  font-size: 15px;
+  width: 230px;
+}
+/* .registration,
+.customer-management {
+  color: #000000DE;
+  font-size: 16px;
+  font-family: Roboto, sans-serif;
+  width: 230px;
+} */
+
+/* Style for the list items */
+.mat-list-item {
+  border-radius: 4px;
+  padding: 8px 16px;
+  display: block;
+  color: #f0f0f0;
+  text-decoration: none;
+}
+.mat-list-item:hover {
+  background-color: #E8EDF4;
+}
+
+.mat-expansion-panel-header:hover {
+  background-color: #f0f0f0;
+  color: #1B4F91;
+  cursor: pointer;
+}
+
+/* CSS for hover effect on dropdown items */
+.dropdown-panel:hover {
+  background-color: #E8EDF4; /* Change background color on hover */
+}
+
+/* CSS for hover effect on specific dropdown items */
+.create-customer:hover,
+.open-account:hover,
+.block-account:hover,
+.close-account:hover,
+.delete-customer:hover,
+.setup-profile:hover,
+.change-password:hover,
+.setup-budget:hover,
+.manage-notification:hover {
+  background-color: rgba(27, 79, 145, 0.25);
+  border: 0.1rem #000000;
+  border-radius: 0.6rem;
+  box-shadow: 0 0.4rem 0.4rem rgba(0, 0, 0, 0.25);
+  box-sizing: border-box;
+}

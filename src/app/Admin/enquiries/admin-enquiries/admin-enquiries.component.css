@@ -1,0 +1,36 @@
+.main-container {
+    margin: -856px 96px 32px 386px !important;
+    width:  1040px;
+    height:  854px;
+    flex-shrink: 0;
+    border-radius: 8px;
+    border: 1px solid var(--Border, rgba(27, 79, 145, 0.25));
+    background: var(--Cards, #fff);
+    box-shadow: 0px 4px 16px 0px rgba(27, 79, 145, 0.15);
+    z-index: 1;
+  }
+  .container {
+    width: 240px;
+    height: 240px;
+    margin-top: 30px;
+    margin-left: 30px;
+    gap:40px ;
+    /* background-color: blue; */
+  }
+  .icon {
+    font-size: 17.9em;
+    height: auto;
+    width: auto;
+    color: rgb(208 192 192);
+  }
+.close-icon {
+  font-size: 6.9em;
+  height: auto;
+  width: auto;
+  color: #1B4F91
+}
+.close-div {
+  margin-top: -150px;
+  margin-left: 71px;
+
+}

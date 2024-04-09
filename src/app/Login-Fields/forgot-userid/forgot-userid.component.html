@@ -1,0 +1,75 @@
+<!-- forgot-userid.component.html -->
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" href="/favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#000000" />
+  <title>To Self Account 3</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter%3A400%2C500" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro%3A400%2C500" />
+</head>
+
+<div class="background-image">
+  
+    <br><br><br><br><br>
+  <div class="forgot-userid-container">
+    
+    <form (ngSubmit)="onSubmit()" [formGroup]="forgotUserIdForm" class="forgotUserIdForm">
+      <p class="forgot-user-id-jat" id="1:98">Forgot User ID?</p>
+  
+      <div class="frame-213-exk" id="1:99">
+        <p class="we-will-send-your-user-id-to-your-registered-e-mail-id-once-the-below-details-are-verified-c8t" id="1:100">
+          We will send your User ID to your registered<br>
+          E-mail Id once the below details are verified.
+        </p>
+      </div>
+      
+      <label for="dob">Date of Birth<span class="star">*</span></label>
+      <input type="date" id="dob" id="dateOfBirth" formControlName="dateOfBirth" required>
+  
+      <label for="pan">PAN<span class="star">*</span></label>
+      <input type="text" id="pan" formControlName="pan" style="text-transform:uppercase" required>
+      <!-- Error message for PAN -->
+      <label *ngIf="panControl?.hasError('invalidPanNumber')" class="error-message">
+        PAN number is incorrect.
+      </label>
+     
+  
+      <label for="aadhar">Aadhar Card<span class="star">*</span></label>
+      <input type="number" id="aadhar" formControlName="aadhar" required>
+      <!-- Error messages for Aadhar -->
+      <label *ngIf="aadharControl?.hasError('minlength')" class="error-message">
+        Aadhar number must be at least 12 digits.
+      </label>
+      <label *ngIf="aadharControl?.hasError('maxlength')" class="error-message">
+        Aadhar number must be exactly 12 digits.
+      </label>
+     
+     
+      <label for="mobno">Mobile Number<span class="star">*</span></label>
+      <input type="number" id="mobno" formControlName="mobno" required pattern="\d*" maxlength="10">
+      <!-- Adjusted to type="number" and added pattern="\d*" and maxlength="10" -->
+      <!-- Error messages for Mobile Number -->
+      <label *ngIf="mobnoControl?.hasError('minlength')" class="error-message">
+        Mobile number must be at least 10 digits.
+      </label>
+      <label *ngIf="mobnoControl?.hasError('maxlength')" class="error-message">
+        Mobile number must be exactly 10 digits.
+      </label>
+     <br>
+      <div class="frame-215-hmv" id="1:114">
+        <div class="secondary-action-button-qt8" id="1:115" type="button" (click)="goBack()">Back</div>
+        <div class="primary-action-button-WjN" id="1:116" type="submit" (click)="onSubmit()">Submit</div>
+      </div>
+    </form>
+  
+  
+    <!-- Success message -->
+    <label *ngIf="resetLinkSent" class="success-message">
+      Retrieve UserID has been sent to your email.
+    </label>
+  </div>
+  
+  </div>
+  
+  

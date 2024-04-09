@@ -1,0 +1,229 @@
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.main-container {
+    display: flex;
+    width: 100%;
+  }
+.container {
+    margin: -852px 96px 32px 386px !important;
+    width: 1040px;
+    height: 854px;
+ 
+    flex-shrink: 0;
+    border-radius: 8px;
+    border: 1px solid var(--Border, rgba(27, 79, 145, 0.25));
+    background: var(--Cards, #fff);
+    box-shadow: 0px 4px 16px 0px rgba(27, 79, 145, 0.15);
+    z-index: 1;
+    display: inline-block;
+}
+ 
+ 
+.setupprofile {
+    width: 448px;
+    height: 568px;
+    margin: 56px 536px 398px 56px;
+    /* background-color: aqua; */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 32px;
+    /* z-index: 2; */
+    /* border: 1px solid; */
+    float: left;
+}
+ 
+.box1 {
+    display: flex;
+ 
+    width: 448px;
+    height: 40px;
+    padding: 8px 8px 8px 12px;
+    align-items: center;
+    /* gap: 8px; */
+    border-radius: 8px;
+    background: var(--Table-Card-Header, rgba(27, 79, 145, 0.10));
+ 
+}
+ 
+.title {
+    display: flex;
+    width: 448px;
+    height: 40px;
+    padding: 8px 8px 8px 12px;
+    align-items: center;
+    gap: 40px;
+    border-radius: 8px;
+    background: var(--Table-Card-Header, rgba(27, 79, 145, 0.1));
+ 
+    color: var(--Primary, #1b4f91);
+ 
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+ 
+.fields {
+    /* display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-self: stretch;
+    margin-top: 24px; */
+    display: flex;
+    width: 448px;
+    justify-content: space-between;
+    align-items: center;
+}
+ 
+label {
+    color: rgba(11, 35, 66, 0.60);
+ 
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+ 
+.Name-input {
+    display: flex;
+    width: 245px;
+    height: 32px;
+    /* padding: 10px; */
+    align-items: center;
+    border-radius: 8px;
+    border: 1px solid var(--Border, rgba(27, 79, 145, 0.25));
+    background: var(--Cards, #FFF);
+}
+ 
+.allinputfields {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+    height: 328px;
+}
+ 
+.fields-add {
+    /* display: flex; */
+    /* width: 448px;
+    height: 109px;
+    gap: 5px;
+    justify-content: space-between;
+    align-items: center; */
+    width: 448px;
+    height: 209px;
+    display: flex;
+    flex-direction: column;
+ 
+ 
+    /* justify-content: space-between; */
+    /* align-items: center; */
+    /* align-items: flex-start; */
+}
+ 
+#Address {
+    /* display: flex;
+    width: 245px;
+    height: 104px;
+    padding: 10px;
+    align-items: center;
+    flex-shrink: 0;
+    border-radius: 8px;
+    border: 1px solid var(--Border, rgba(27, 79, 145, 0.25));
+    background: var(--Cards, #FFF); */
+}
+ 
+ 
+ 
+.setup-profile2 {
+    height: 40px;
+    width: 40px;
+    margin: -428px 480px 758px 482px;
+    display: inline-flex;
+    align-items: flex-start;
+    gap: 10px;
+   
+ 
+}
+ 
+.edit-button {border: none;}
+ 
+/* .Address-input{
+    align-items: center;
+    border-radius: 8px;
+    border: 1px solid var(--Border, rgba(27, 79, 145, 0.25));
+    background: var(--Cards, #FFF);
+} */
+ 
+.fields-address {
+    width: 245px;
+    height: 104px;
+}
+ 
+.forbuttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+    align-self: stretch;
+}
+ 
+.cancel {
+    display: flex;
+    height: 40px;
+    padding: 8px 30px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex: 1 0 0;
+    border-radius: 6px;
+    border: 1px solid var(--Field-Border, rgba(237, 241, 246, 0.5));
+    box-shadow: 2px 2px 4px 0px rgba(252, 252, 252, 0.15);
+}
+ 
+.updatebutton {
+    display: flex;
+    height: 40px;
+    padding: 8px 30px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex: 1 0 0;
+    border-radius: 6px;
+    background: var(--Primary-action-Button-Enabled, #1B4F91);
+    box-shadow: 2px 4px 4px 0px rgba(27, 79, 145, 0.15);
+    color: #FFF;
+}
+.path{
+    position: absolute;
+/* left: 7px; */
+/* top: 3px; */
+aspect-ratio: 1.11;
+    object-fit: contain;
+    object-position: center;
+    width: 100%;
+    fill: var(--Primary, #1b4f91);
+    max-width: 10px;
+    /* z-index: 2; */
+}
+.penpaper{
+    position: absolute;
+/* left: 7px; */
+/* top: 3px; */
+aspect-ratio: 1.11;
+    object-fit: contain;
+    object-position: center;
+    width: 100%;
+    fill: var(--Primary, #1b4f91);
+    max-width: 15px;
+    margin: 6px 0px 0px -20px;
+}
+ 
+.edit-button.clicked {
+    /* Define the visual indication when the button is clicked */
+    background-color: lightgray; /* For example, change background color */
+  }

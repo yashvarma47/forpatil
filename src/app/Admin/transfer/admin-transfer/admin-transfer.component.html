@@ -1,0 +1,89 @@
+<!-- <app-navbar
+  [brandText]="'Transaction'"
+  [customerLink]="'/dashboard/customer-record'"
+  [accountLink]="'/dashboard/account-record'"
+  [reportingLink]="'/dashboard/reporting'"
+></app-navbar> -->
+ 
+<app-header></app-header>
+<app-admin-sidenav></app-admin-sidenav>
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" href="/favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#000000" />
+  <title>To Self Account 3</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter%3A400%2C500" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro%3A400%2C500" />
+  <!-- <link rel="stylesheet" href="./styles/to-self-account-3.css"/> -->
+
+
+</head>
+ 
+<div class="container">
+  <div class="view-balance">
+ 
+    <form (ngSubmit)="onSubmit()"  #accountForm="ngForm">
+      <div class="box1">
+        <div class="title">Teller Transaction</div>
+      </div>
+     
+      <div class="maincontent">
+        <div class="fields">
+          <label for="customerId" class="forlabels">Customer ID<span class="star">*</span></label>
+          <input type="number" id="customerId" name="customerId" class="forinputs" [(ngModel)]="customerId" (input)="limitTo8Digits($event)"/>
+        </div>
+        <!-- <div *ngIf="customerId.length < 11 && customerId.length > 0" style="color: red;">
+          UserId must be 8 digits.
+           </div> -->
+ 
+        <div class="fields">
+          <label for="accno" class="forlabels">Account Number<span class="star">*</span></label>
+          <input type="number" id="accno" name="accountNumber" class="forinputs" [(ngModel)]="account_number"(input)="limitTo11Digits($event)" />
+        </div>
+ 
+        <div  class="radiofields" >
+          <label class="forlabels">Transaction Type<span class="star">*</span></label>
+          <div class="forradio">
+          <label for="credit" >Credit</label>
+          <input class="creditradio" type="radio" id="credit" name="transactionType" value="Credit" [(ngModel)]="transactionType">
+         
+          <label for="debit" >Debit</label>
+            <input class="debitradio" type="radio" id="debit" name="transactionType" value="Debit" [(ngModel)]="transactionType">
+          </div>
+         
+          <!-- <div class="forrb">
+            <input type="radio" id="credit" name="transactionType" value="credit" [(ngModel)]="transactionType">
+            <label for="credit" >Credit</label>
+         
+            <input type="radio" id="debit" name="transactionType" value="debit" [(ngModel)]="transactionType">
+            <label for="debit" >Debit</label>
+          </div> -->
+        </div>
+ 
+ 
+        <div class="fields">
+          <label for="amount" class="forlabels">Amount<span class="star">*</span></label>
+          <input type="text" id="amount" name="amount" class="forinputs" [(ngModel)]="amount" pattern="^\d+(\.\d{1,2})?$" />
+      </div>
+      <div *ngIf="amount !== null && amount !== undefined && !isValidAmount()" class="error-message">Invalid amount. Please enter a positive number with up to 2 decimal places and not zero.</div>
+ 
+        <div class="fields">
+          <label for="date" class="forlabels">Date<span class="star">*</span></label>
+          <input type="text" id="date" name="date" class="forinputs" [(ngModel)]="date" readonly />
+        </div>
+ 
+        <div class="fornarrative">
+          <label for="narratives" class="forlabels">Narratives<span class="star">*</span></label>
+          <input id="narratives"  class="reasoninput" name="narratives" [(ngModel)]="narratives"
+            placeholder="What is the Payment About">
+        </div>
+        <div class="forbuttons">
+          <button type="submit" class="submitbutton" [disabled]="accountForm.invalid || amount !== null && amount < 0">Submit</button>
+        </div>
+      </div>
+     
+    </form>
+  </div>
+</div>

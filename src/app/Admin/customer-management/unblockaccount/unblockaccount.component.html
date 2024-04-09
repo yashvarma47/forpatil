@@ -1,0 +1,83 @@
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter%3A400%2C500" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro%3A400%2C500" />
+<app-header></app-header>
+<app-admin-sidenav></app-admin-sidenav>
+ 
+<div class="topframe">
+  <div>
+    <select class="scacc" id="chooseAcc" [(ngModel)]="selectedOption" (ngModelChange)="onDropdownoptions()">
+      <option value="Customer ID">Customer ID</option>
+      <option value="Account Number">Account Number</option>
+    </select>
+  </div>
+  <!-- <div> -->
+    <!-- <select class="scacc" id="chooseAcc" [(ngModel)]="selectedOption" (ngModelChange)="onDropdownoptions()"> -->
+    <!-- <select class="scacc" id="chooseAcc" [(ngModel)]="selectedOption" >
+      <option value="Customer ID" [ngClass]="{'active': !showAllBlockAccountDetails && showCustomerBlockAccountDetails}">Customer ID</option>
+
+      <option value="Account Number" [ngClass]="{'active': showAllBlockAccountDetails && !showCustomerBlockAccountDetails}">Account Number</option>
+    </select>
+  </div> -->
+  <!-- <input class="customer-search"  (input)="onCustomerSearchChange()" id="customersearch" type="text" placeholder="Search" maxlength=""> -->
+  
+  <input class="customer-search" [(ngModel)]="customerSearchInput" (input)="onSearchChange()" id="customersearch" type="text"  [placeholder]="selectedOption === 'Customer ID' ?  'Customer ID' : 'Account Number'" maxlength="11">
+ 
+
+  <!-- <input *ngIf="showAllBlockAccountDetails && !showCustomerBlockAccountDetails" class="customer-search" [(ngModel)]="customerSearchInput" (input)="onCustomerSearchChange()" id="customersearch" type="text" placeholder="Search Customer Id" maxlength="8">
+
+  <input *ngIf="showAllBlockAccountDetails && !showCustomerBlockAccountDetails" class="account-search" [(ngModel)]="accountSearchInput" (input)="onAccountSearchChange()" id="accountsearch" type="text" placeholder="Search Account No" maxlength="11"> -->
+  
+
+  <div class="block-customer" (click)="onBlockAccountClick()">Block Account</div>
+</div>
+<span class="error">{{errormsg}}</span>
+ 
+<div [ngSwitch]="selectedOption">
+  <div class="container" *ngSwitchCase="'Customer ID'">
+    <div class="Customer">
+      <table class="customer-table">
+        <thead>
+          <tr>
+            <th class="account-number">Account Number</th>
+            <th class="account-status">Status</th>
+            <th class="unblock-btn">Unblock</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let account of accounts" >
+            <td class="account-number">{{ account.accountnumber }}</td>
+            <td class="account-status" [ngClass]="getAccountStatusColor(account.accountstatus)">{{ account.accountstatus.toUpperCase()
+            }}</td>
+           <td class="unblock-btn">
+              <button (click)="onUnblockAccount(account)">Unblock</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+ 
+  <div class="container" *ngSwitchCase="'Account Number'">
+    <div class="Customer">
+      <table class="customer-table">
+        <thead>
+          <tr>
+            <th class="account-number">Account Number</th>
+            <th class="account-status">Status</th>
+            <th class="unblock-btn">Unblock</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let account of accounts">
+            <td class="account-number">{{ account.accountnumber }}</td>
+             <td class="account-status" [ngClass]="getAccountStatusColor(account.accountstatus)">{{ account.accountstatus.toUpperCase() 
+              }}</td>
+           <td class="unblock-btn">
+              <button (click)="onUnblockAccount(account)">Unblock</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

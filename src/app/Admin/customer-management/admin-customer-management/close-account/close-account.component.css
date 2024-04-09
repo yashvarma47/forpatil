@@ -1,0 +1,245 @@
+.container {
+    margin: -854px 96px 32px 376px !important;
+    width: 1040px;
+    height: 854px;
+    /* transform: rotate(90deg); */
+    flex-shrink: 0;
+    border-radius: 8px;
+    border: 1px solid var(--Border, rgba(27, 79, 145, 0.25));
+    background: var(--Cards, #fff);
+    box-shadow: 0px 4px 16px 0px rgba(27, 79, 145, 0.15);
+    z-index: 1;
+}
+ 
+.closeaccount {
+    display: flex;
+    width: 448px;
+    height: 748px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 40px;
+    margin: 56px 421px 406px 56px;
+}
+ 
+/* width: Hug (479px)
+height: Hug (748px)
+top: 152px
+left: 432px
+gap: 40px
+ */
+ 
+.box1 {
+ 
+    display: flex;
+    width: 448px;
+    height: 40px;
+    padding: 8px 8px 8px 12px;
+    align-items: center;
+    gap: 8px;
+    border-radius: 8px;
+    background: var(--Table-Card-Header, rgba(27, 79, 145, 0.10));
+}
+ 
+.title {
+    color: var(--Primary, #1B4F91);
+    /* font-family: Inter; */
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+ 
+.maincontent {
+    display: flex;
+    width: 448px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 32px;
+    height: 572px;
+ 
+ 
+}
+ 
+.chooseTicket {
+    display: flex;
+    width: 448px;
+    height: 32px;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+}
+ 
+.forlabel {
+    color: rgba(11, 35, 66, 0.60);
+    /* font-family: Inter; */
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+ 
+ 
+.accounttypedropdown {
+    display: flex;
+    width: 245px;
+    height: 32px;
+    padding: 5px;
+    justify-content: space-between;
+ 
+    border-radius: 8px;
+    border: 1px solid var(--Field-Border, rgba(19, 50, 88, 0.50));
+    background: var(--Cards, #FFF);
+}
+ 
+.fields {
+    width: 448px;
+    height: 32px;
+    gap: 24px;
+    justify-content: space-between;
+}
+ 
+.fields4 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-self: stretch;
+ 
+}
+ 
+.forinput {
+    width: 245px;
+    height: 32px;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid var(--Field-Border, rgba(19, 50, 88, 0.50));
+    background: var(--Cards, #FFF);
+ 
+    background: rgba(246, 248, 251, 1)
+}
+ 
+.reason {
+    width: 448px;
+    height: 116px;
+    display: flex;
+    gap: 24px;
+ 
+    justify-content: space-between;
+    align-items: center;
+ 
+ 
+}
+ 
+.forreasonlabel {
+    width: 56px;
+    height: 17px;
+    color: rgba(11, 35, 66, 0.60);
+    /* font-family: Inter; */
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+ 
+}
+ 
+.forreasoninput {
+    width: 245px;
+    height: 116px;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid var(--Field-Border, rgba(19, 50, 88, 0.50));
+    background: var(--Cards, #FFF);
+ 
+    background: rgb(255, 255, 255)
+}
+ 
+.forbuttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+    align-self: stretch;
+}
+ 
+.cancel {
+    display: flex;
+    height: 40px;
+    padding: 8px 30px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex: 1 0 0;
+    border-radius: 6px;
+    border: 1px solid var(--Field-Border, rgba(29, 75, 130, 0.5));
+    box-shadow: 2px 2px 4px 0px rgba(252, 252, 252, 0.15);
+    background-color: #FFF;
+}
+ 
+.updatebutton {
+    display: flex;
+    height: 40px;
+    padding: 8px 30px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex: 1 0 0;
+    border-radius: 6px;
+    background: var(--Primary-action-Button-Enabled, #1B4F91);
+    box-shadow: 2px 4px 4px 0px rgba(27, 79, 145, 0.15);
+    color: #FFF;
+}
+ 
+/* .tohide{
+    display: flex;
+    width: 448px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 32px;
+    height: 364px;
+} */
+ 
+.hiddenbuttons {
+    align-items: flex-start;
+    display: inline-grid;
+    width: 479px;
+    height: 96px;
+    gap: 16px;
+ 
+}
+ 
+/*
+width: Fill (479px)
+height: Fixed (40px)
+padding: 8px, 30px, 8px, 30px
+border-radius: 6px
+gap: 10px
+ */
+.closeacc {
+    width: 448px;
+    height: 40px;
+    padding: 8px, 30px, 8px, 30px;
+    border-radius: 6px;
+    gap: 10px;
+    border: 1px solid var(--Field-Border, rgba(19, 50, 88, 0.50));
+    /* background: rgba(225, 81, 81, 1); */
+    background: var(--Primary-action-Button-Enabled, #1B4F91);
+    color: white;
+ 
+ 
+}
+ 
+.Deny {
+    width: 448px;
+    height: 40px;
+    padding: 8px, 30px, 8px, 30px;
+    border-radius: 6px;
+    border: 1px solid var(--Field-Border, rgba(19, 50, 88, 0.50));
+    gap: 10px;
+    background: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    box-shadow: 2px 4px 4px 0px rgba(27, 79, 145, 0.15);
+/*   border: 1px solid var(--Field-Border, rgba(19, 50, 88, 0.50));
+    background: var(--Cards, #FFF);
+ 
+    background: rgb(255, 255, 255) */
+ 
+}

@@ -1,0 +1,27 @@
+<app-header></app-header>
+<app-sidenav></app-sidenav>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter%3A400%2C500" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro%3A400%2C500" />
+  <title>Document</title>
+  <link rel="stylesheet" href="./transfer.component.css">
+</head>
+<div>
+
+  <div class="main-container">
+    <!-- <div class="container"> -->
+      <div class="grid-container">
+        <button *ngFor="let item of items" class="grid-item" [style.pointer-events]="item.title === 'External Transfer' ? 'none' : 'auto'" (click)="onItemClick(item.title)">
+          <img [src]="item.imageUrl" alt="{{ item.title }}">
+          <h3>{{ item.title }}</h3>
+        </button>
+      </div>
+    <!-- </div> -->
+  </div>
+  
+</div>
+</html>

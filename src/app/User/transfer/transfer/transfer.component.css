@@ -1,0 +1,71 @@
+/* body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0; /* Set a background color for the body */
+
+ 
+.container {
+    width: 50%; /* Adjust the width as needed */
+    margin: 30px; /* Add margin for spacing */
+    display: flex;
+    flex-direction: column; /* Align items vertically */
+    justify-content: flex-start; /* Align items to the top (left side) */
+    align-items: flex-start; /* Align items to the left */
+    margin-top: -790px;
+    margin-bottom: 30px;
+}
+ 
+.main-container {
+    box-shadow: 0px 0px 2px 0px #1B4F91;
+    width: 1040px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    height: 854px;
+    align-self: flex-start;
+    margin-top: -855px;
+    margin-left: 400px;
+}
+ 
+.grid-container {
+    display: inline-grid;
+    margin-top: 32px;
+    margin-left: 50px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: minmax(120px, auto);
+    gap: 30px;
+    justify-content: center;
+}
+ 
+.grid-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center the grid item content vertically */
+    align-items: center; /* Center the grid item content horizontally */
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0px 0px 4px 0px #1B4F91; /* Add a shadow to the grid item */
+}
+ 
+.grid-item img {
+    max-width: 40%;
+    max-height: 40%;
+    object-fit: contain;
+    border-radius: 4px;
+    margin-bottom: 8px;
+    margin-top: 20px; /* Add a top margin of 20px */
+}
+ 
+.grid-item h3 {
+    margin-top: 8px;
+    margin-bottom: 8px;
+    font-size: 12px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+    overflow-wrap: break-word;
+    color: #1B4F91;
+}
