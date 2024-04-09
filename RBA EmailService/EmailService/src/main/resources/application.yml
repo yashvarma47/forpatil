@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: RBA-EMAIL-SERVICE
+ 
+eureka:
+  client:
+    service-url:
+      defaultZone : http://192.168.97.44:8761/eureka/
+ 
+ 
+server:
+  port: 1024
